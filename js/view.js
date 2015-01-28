@@ -16,7 +16,7 @@ var pajomatic_view = function () {
             var name = element.name;
             var value = element.value;
             if (is_numeric.test(value)) {
-                clean_value = is_numeric.exec(value)[0].replace(',','.');
+                clean_value = parseFloat(is_numeric.exec(value)[0].replace(',','.'));
             } else {
                 clean_value = 0;
                 $('[name='+name+']').val(clean_value);
