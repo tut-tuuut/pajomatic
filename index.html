@@ -5,57 +5,57 @@ title: Mensualisation sur une année incomplète
 
       <h1>Mensualisation sur une année incomplète</h1>
       <h2>Données</h2>
-      <form action="" id="incomplete-year-input">
+      <form action="" id="incomplete_year_input">
         <div class="row">
           <div class="col-md-6">
             <fieldset>
               <legend>Contrat</legend>
 
               <div class="form-group">
-                <label for="nb-semaines">Nombre de semaines d'accueil par an</label>
-                {% include form/input-group.html id="nb-semaines" addon="semaines" %}
+                <label for="nb_semaines">Nombre de semaines d'accueil par an</label>
+                {% include form/input-group.html id="nb_semaines" addon="semaines" %}
               </div>
 
               <div class="form-group">
-                <label for="nb-jours-par-semaine">Nombre de jours d'accueil par semaine</label>
-                {% include form/input-group.html id="nb-jours-par-semaine" addon="jours" %}
+                <label for="nb_jours_par_semaine">Nombre de jours d'accueil par semaine</label>
+                {% include form/input-group.html id="nb_jours_par_semaine" addon="jours" %}
               </div>
 
               <div class="form-group">
                 <label>Nombre d'heures par semaine</label>
                 <div class="row">
                   <div class="col-md-6">
-                    {% include form/input-group.html id="nb-heures-normales" addon="heures normales" %}
+                    {% include form/input-group.html id="nb_heures_normales" addon="heures normales" %}
                   </div>
                   <div class="col-md-6">
-                    {% include form/input-group.html id="nb-heures-majorees" addon="heures majorées" %}
+                    {% include form/input-group.html id="nb_heures_majorees" addon="heures majorées" %}
                   </div>
               </div>
 
               </div>
                 <div class="form-group">
-                <label for="salaire-net-normal">Salaire horaire net d'une heure normale</label>
-                {% include form/input-group.html id="salaire-net-normal" addon="€" %}
+                <label for="salaire_net_normal">Salaire horaire net d'une heure normale</label>
+                {% include form/input-group.html id="salaire_net_normal" addon="€" %}
               </div>
 
               <div class="form-group">
-              <label for="majoration-heures-majorees">Majoration des heures majorées</label>
-                {% include form/input-group.html id="majoration-heures-majorees" addon="%" %}
+              <label for="majoration_heures_majorees">Majoration des heures majorées</label>
+                {% include form/input-group.html id="majoration_heures_majorees" addon="%" %}
             </div>
 
               <div class="form-group">
-              <label for="indemnite-entretien">Indemnité d'entretien</label>
-                {% include form/input-group.html id="indemnite-entretien" addon="€ par jour" %}
+              <label for="indemnite_entretien">Indemnité d'entretien</label>
+                {% include form/input-group.html id="indemnite_entretien" addon="€ par jour" %}
               </div>
 
               <div class="form-group">
                 <label>Indemnités de repas</label>
                 <div class="row">
                   <div class="col-md-6">
-                    {% include form/input-group.html id="indemnite-repas" addon="€ par repas" %}
+                    {% include form/input-group.html id="indemnite_repas" addon="€ par repas" %}
                   </div>
                   <div class="col-md-6">
-                    {% include form/input-group.html id="indemnite-gouter" addon="€ par goûter" %}
+                    {% include form/input-group.html id="indemnite_gouter" addon="€ par goûter" %}
                   </div>
                 </div>
               </div>
@@ -66,18 +66,18 @@ title: Mensualisation sur une année incomplète
               <legend>Mois en cours</legend>
 
               <div class="form-group">
-                <label for="nb-jours-accueil-reel">Nombre de jours d'accueil réels dans le mois</label>
-                {% include form/input-group.html id="nb-jours-accueil-reel" addon="jours" %}
+                <label for="nb_jours_accueil_reel">Nombre de jours d'accueil réels dans le mois</label>
+                {% include form/input-group.html id="nb_jours_accueil_reel" addon="jours" %}
               </div>
 
               <div class="form-group">
                 <label>Congés payés</label>
                 <div class="row">
                   <div class="col-md-6">
-                    {% include form/input-group.html id="nb-jours-conges-payes" addon="jours" %}
+                    {% include form/input-group.html id="nb_jours_conges_payes" addon="jours" %}
                   </div>
                   <div class="col-md-6">
-                    {% include form/input-group.html id="montant-conges-payes" addon="€" %}
+                    {% include form/input-group.html id="montant_conges_payes" addon="€" %}
                   </div>
                 </div>
               </div>
@@ -86,10 +86,10 @@ title: Mensualisation sur une année incomplète
                 <label>Heures supplémentaires</label>
                 <div class="row">
                   <div class="col-md-6">
-                    {% include form/input-group.html id="nb-supp-complementaires" addon="heures complémentaires" %}
+                    {% include form/input-group.html id="nb_supp_complementaires" addon="heures complémentaires" %}
                   </div>
                   <div class="col-md-6">
-                    {% include form/input-group.html id="nb-supp-majorees" addon="heures majorées" %}
+                    {% include form/input-group.html id="nb_supp_majorees" addon="heures majorées" %}
                   </div>
                 </div>
               </div>
@@ -98,10 +98,10 @@ title: Mensualisation sur une année incomplète
                 <label>Absences non rémunérées</label>
                 <div class="row">
                   <div class="col-md-6">
-                    {% include form/input-group.html id="absences-nb-jours" addon="jours" %}
+                    {% include form/input-group.html id="absences_nb_jours" addon="jours" %}
                   </div>
                   <div class="col-md-6">
-                    {% include form/input-group.html id="absences-nb-heures" addon="heures" %}
+                    {% include form/input-group.html id="absences_nb_heures" addon="heures" %}
                   </div>
                 </div>
               </div>

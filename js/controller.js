@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // observe changes on input form
-    $('#incomplete-year-input').on('change', 'input', function (event) {
-        pajomatic_view.extractFormData('incomplete-year-input');
+    $('#incomplete_year_input').on('change', 'input', function (event) {
+        pajomatic_view.extractFormData('incomplete_year_input');
     });
     // extract data from view
     // pass data to the model
