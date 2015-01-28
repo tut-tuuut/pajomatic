@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pajomatic</title>
+---
+layout: default
+title: Mensualisation sur une année incomplète
+---
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="container">
-      <h1>Pajomatic</h1>
+      <h1>Mensualisation sur une année incomplète</h1>
       <h2>Données</h2>
       <form action="">
         <div class="row">
@@ -27,76 +12,53 @@
               <legend>Contrat</legend>
 
               <div class="form-group">
-                <label for="contrat-semaines-accueil">Nombre de semaines d'accueil par an</label>
-                <div class="input-group">
-                  <input id="contrat-semaines-accueil" type="number" class="form-control" placeholder="42" aria-describedby="basic-addon2">
-                  <span class="input-group-addon" id="basic-addon2">semaines</span>
-                </div>
+                <label for="nb-semaines">Nombre de semaines d'accueil par an</label>
+                {% include form/input-group.html id="nb-semaines" addon="semaines" %}
               </div>
 
               <div class="form-group">
-                <label for="contrat-jours-hebdo-accueil">Nombre de jours d'accueil par semaine</label>
-                <div class="input-group">
-                  <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="5" aria-describedby="basic-addon3">
-                  <span class="input-group-addon" id="basic-addon3">jours</span>
-                </div>
+                <label for="nb-jours-par-semaine">Nombre de jours d'accueil par semaine</label>
+                {% include form/input-group.html id="nb-jours-par-semaine" addon="jours" %}
               </div>
 
               <div class="form-group">
-                <label for="contrat-jours-hebdo-accueil">Nombre d'heures par semaine</label>
+                <label>Nombre d'heures par semaine</label>
                 <div class="row">
                   <div class="col-md-6">
-                    <div class="input-group">
-                      <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="5" aria-describedby="basic-addon3">
-                      <span class="input-group-addon" id="basic-addon3">heures normales</span>
-                    </div>
+                    {% include form/input-group.html id="nb-heures-normales" addon="heures normales" %}
                   </div>
                   <div class="col-md-6">
-                    <div class="input-group">
-                      <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="5" aria-describedby="basic-addon3">
-                      <span class="input-group-addon" id="basic-addon3">heures majorées</span>
-                    </div>
+                    {% include form/input-group.html id="nb-heures-majorees" addon="heures majorées" %}
                   </div>
               </div>
+
+              </div>
+                <div class="form-group">
+                <label for="salaire-net-normal">Salaire horaire net d'une heure normale</label>
+                {% include form/input-group.html id="salaire-net-normal" addon="€" %}
+              </div>
+
+              <div class="form-group">
+              <label for="majoration-heures-majorees">Majoration des heures majorées</label>
+                {% include form/input-group.html id="majoration-heures-majorees" addon="%" %}
             </div>
 
               <div class="form-group">
-              <label for="contrat-jours-hebdo-accueil">Salaire horaire net d'une heure normale</label>
-              <div class="input-group">
-                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="3,20" aria-describedby="basic-addon3">
-                <span class="input-group-addon" id="basic-addon3">€</span>
+              <label for="indemnite-entretien">Indemnité d'entretien</label>
+                {% include form/input-group.html id="indemnite-entretien" addon="€ par jour" %}
               </div>
-            </div>
 
               <div class="form-group">
-              <label for="contrat-jours-hebdo-accueil">Majoration des heures majorées</label>
-              <div class="input-group">
-                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="15" aria-describedby="basic-addon3">
-                <span class="input-group-addon" id="basic-addon3">%</span>
+                <label>Indemnités de repas</label>
+                <div class="row">
+                  <div class="col-md-6">
+                    {% include form/input-group.html id="indemnite-repas" addon="€ par repas" %}
+                  </div>
+                  <div class="col-md-6">
+                    {% include form/input-group.html id="indemnite-gouter" addon="€ par goûter" %}
+                  </div>
+                </div>
               </div>
-            </div>
-
-              <div class="form-group">
-              <label for="contrat-jours-hebdo-accueil">Indemnité d'entretien</label>
-              <div class="input-group">
-                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="3,50" aria-describedby="basic-addon3">
-                <span class="input-group-addon" id="basic-addon3">€ par jour</span>
-              </div>
-            </div>
-
-              <div class="form-group">
-              <label for="contrat-jours-hebdo-accueil">Indemnité de repas</label>
-              <div class="row">
-                <div class="col-md-6"><div class="input-group">
-                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="3,50" aria-describedby="basic-addon3">
-                <span class="input-group-addon" id="basic-addon3">€ par repas</span>
-              </div></div>
-                <div class="col-md-6"><div class="input-group">
-                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="2,50" aria-describedby="basic-addon3">
-                <span class="input-group-addon" id="basic-addon3">€ par goûter</span>
-              </div></div>
-              </div>
-            </div>
             </fieldset>
           </div>
           <div class="col-md-6">
@@ -104,44 +66,45 @@
               <legend>Mois en cours</legend>
 
               <div class="form-group">
-                <label for="contrat-semaines-accueil">Nombre de jours d'accueil réels dans le mois</label>
-                <div class="input-group">
-                  <input id="contrat-semaines-accueil" type="number" class="form-control" placeholder="42" aria-describedby="basic-addon2">
-                  <span class="input-group-addon" id="basic-addon2">jours</span>
+                <label for="nb-jours-accueil-reel">Nombre de jours d'accueil réels dans le mois</label>
+                {% include form/input-group.html id="nb-jours-accueil-reel" addon="jours" %}
+              </div>
+
+              <div class="form-group">
+                <label>Congés payés</label>
+                <div class="row">
+                  <div class="col-md-6">
+                    {% include form/input-group.html id="nb-jours-conges-payes" addon="jours" %}
+                  </div>
+                  <div class="col-md-6">
+                    {% include form/input-group.html id="montant-conges-payes" addon="€" %}
+                  </div>
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="contrat-jours-hebdo-accueil">Congés payés</label>
+                <label>Heures supplémentaires</label>
                 <div class="row">
                   <div class="col-md-6">
-                    <div class="input-group">
-                      <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="1" aria-describedby="basic-addon3">
-                      <span class="input-group-addon" id="basic-addon3">jour(s)</span>
-                    </div>
+                    {% include form/input-group.html id="nb-supp-complementaires" addon="heures complémentaires" %}
                   </div>
                   <div class="col-md-6">
-                    <div class="input-group">
-                      <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="31,50" aria-describedby="basic-addon3">
-                      <span class="input-group-addon" id="basic-addon3">€</span>
-                    </div>
+                    {% include form/input-group.html id="nb-supp-majorees" addon="heures majorées" %}
                   </div>
+                </div>
               </div>
-            </div>
 
               <div class="form-group">
-              <label for="contrat-jours-hebdo-accueil">Heures supplémentaires</label>
-              <div class="row">
-                <div class="col-md-6"><div class="input-group">
-                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="3,50" aria-describedby="basic-addon3">
-                <span class="input-group-addon" id="basic-addon3">heures complémentaires</span>
-              </div></div>
-                <div class="col-md-6"><div class="input-group">
-                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="2,50" aria-describedby="basic-addon3">
-                <span class="input-group-addon" id="basic-addon3">heures majorées</span>
-              </div></div>
+                <label>Absences non rémunérées</label>
+                <div class="row">
+                  <div class="col-md-6">
+                    {% include form/input-group.html id="absences-nb-jours" addon="jours" %}
+                  </div>
+                  <div class="col-md-6">
+                    {% include form/input-group.html id="absences-nb-heures" addon="heures" %}
+                  </div>
+                </div>
               </div>
-            </div>
             </fieldset>
           </div>
         </div>
@@ -211,9 +174,5 @@
       </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
+
+
