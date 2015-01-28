@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Pajomatic</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,7 +17,199 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class="container">
+      <h1>Pajomatic</h1>
+      <h2>Données</h2>
+      <form action="">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset>
+              <legend>Contrat</legend>
+
+              <div class="form-group">
+                <label for="contrat-semaines-accueil">Nombre de semaines d'accueil par an</label>
+                <div class="input-group">
+                  <input id="contrat-semaines-accueil" type="number" class="form-control" placeholder="42" aria-describedby="basic-addon2">
+                  <span class="input-group-addon" id="basic-addon2">semaines</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contrat-jours-hebdo-accueil">Nombre de jours d'accueil par semaine</label>
+                <div class="input-group">
+                  <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="5" aria-describedby="basic-addon3">
+                  <span class="input-group-addon" id="basic-addon3">jours</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contrat-jours-hebdo-accueil">Nombre d'heures par semaine</label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="input-group">
+                      <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="5" aria-describedby="basic-addon3">
+                      <span class="input-group-addon" id="basic-addon3">heures normales</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="input-group">
+                      <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="5" aria-describedby="basic-addon3">
+                      <span class="input-group-addon" id="basic-addon3">heures majorées</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+              <div class="form-group">
+              <label for="contrat-jours-hebdo-accueil">Salaire horaire net d'une heure normale</label>
+              <div class="input-group">
+                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="3,20" aria-describedby="basic-addon3">
+                <span class="input-group-addon" id="basic-addon3">€</span>
+              </div>
+            </div>
+
+              <div class="form-group">
+              <label for="contrat-jours-hebdo-accueil">Majoration des heures majorées</label>
+              <div class="input-group">
+                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="15" aria-describedby="basic-addon3">
+                <span class="input-group-addon" id="basic-addon3">%</span>
+              </div>
+            </div>
+
+              <div class="form-group">
+              <label for="contrat-jours-hebdo-accueil">Indemnité d'entretien</label>
+              <div class="input-group">
+                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="3,50" aria-describedby="basic-addon3">
+                <span class="input-group-addon" id="basic-addon3">€ par jour</span>
+              </div>
+            </div>
+
+              <div class="form-group">
+              <label for="contrat-jours-hebdo-accueil">Indemnité de repas</label>
+              <div class="row">
+                <div class="col-md-6"><div class="input-group">
+                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="3,50" aria-describedby="basic-addon3">
+                <span class="input-group-addon" id="basic-addon3">€ par repas</span>
+              </div></div>
+                <div class="col-md-6"><div class="input-group">
+                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="2,50" aria-describedby="basic-addon3">
+                <span class="input-group-addon" id="basic-addon3">€ par goûter</span>
+              </div></div>
+              </div>
+            </div>
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <legend>Mois en cours</legend>
+
+              <div class="form-group">
+                <label for="contrat-semaines-accueil">Nombre de jours d'accueil réels dans le mois</label>
+                <div class="input-group">
+                  <input id="contrat-semaines-accueil" type="number" class="form-control" placeholder="42" aria-describedby="basic-addon2">
+                  <span class="input-group-addon" id="basic-addon2">jours</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contrat-jours-hebdo-accueil">Congés payés</label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="input-group">
+                      <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="1" aria-describedby="basic-addon3">
+                      <span class="input-group-addon" id="basic-addon3">jour(s)</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="input-group">
+                      <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="31,50" aria-describedby="basic-addon3">
+                      <span class="input-group-addon" id="basic-addon3">€</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+              <div class="form-group">
+              <label for="contrat-jours-hebdo-accueil">Heures supplémentaires</label>
+              <div class="row">
+                <div class="col-md-6"><div class="input-group">
+                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="3,50" aria-describedby="basic-addon3">
+                <span class="input-group-addon" id="basic-addon3">heures complémentaires</span>
+              </div></div>
+                <div class="col-md-6"><div class="input-group">
+                <input id="contrat-jours-hebdo-accueil" type="number" class="form-control" placeholder="2,50" aria-describedby="basic-addon3">
+                <span class="input-group-addon" id="basic-addon3">heures majorées</span>
+              </div></div>
+              </div>
+            </div>
+            </fieldset>
+          </div>
+        </div>
+      </form>
+      <h2>Résultats des calculs</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>À déclarer sur Pajemploi</h3>
+            <table class="table table-bordered">
+              <tr>
+                <th scope="row">Nombre d'heures normales</th>
+                <td>165</td>
+              </tr>
+              <tr>
+                <th scope="row">Nombre de jours d'activité</th>
+                <td>26</td>
+              </tr>
+              <tr>
+                <th scope="row">Nombre de jours de congés payés</th>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th scope="row">Salaire horaire net d'une heure normale</th>
+                <td>3,50 €</td>
+              </tr>
+              <tr>
+                <th scope="row">Nombre d'heures majorées</th>
+                <td>4</td>
+              </tr>
+              <tr>
+                <th scope="row">Nombre d'heures complémentaires</th>
+                <td>5</td>
+              </tr>
+              <tr>
+                <th scope="row">Salaire net total</th>
+                <td>651,35 €</td>
+              </tr>
+              <tr>
+                <th scope="row">Indemnités d'entretien</th>
+                <td>75,52 €</td>
+              </tr>
+              <tr>
+                <th scope="row">Indemnités de repas</th>
+                <td>175,35 €</td>
+              </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+          <h3>Somme totale à payer</h3>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              852,64 €
+            </div>
+          </div>
+          <h3>Pour information</h3>
+          <div class="panel panel-danger">
+            <div class="panel-heading">Attention</div>
+            <div class="panel-body">Vous dépassez le plafond de 5 SMIC. La CAF ne va pas vous verser l'aide si vous déclarez cela.</div>
+          </div>
+          <h3>Actions</h3>
+          <div class="btn-group" role="toolbar">
+            <button type="button" class="btn btn-default">Imprimer <i class="glyphicon glyphicon-print"></i></button>
+            <button type="button" class="btn btn-default">Exporter <i class="glyphicon glyphicon glyphicon-envelope"></i></button>
+            <button type="button" class="btn btn-default">Partager <i class="glyphicon glyphicon-star"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.11.2.min.js"></script>
