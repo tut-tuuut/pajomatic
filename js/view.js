@@ -8,7 +8,7 @@ var pajomatic_view = function () {
     clean_number = /,/;
 
 
-    exports.extractFormData = function(formId) {
+    exports.extractFormData = function (formId) {
         var form = $('#' + formId);
         var finalData = {};
         var clean_value;
@@ -25,6 +25,28 @@ var pajomatic_view = function () {
 
         });
         return finalData;
+    };
+
+    exports.display = function (data, element) {
+        var placeholder;
+        for (key in data) {
+            if (!data.hasOwnProperty(key)) continue;
+            placeholder = element.find('#'+key);
+            if (!placeholder) {
+                continue;
+            }
+            if (placeholder.hasClass('number')) {
+                placeholder.html(exports.formatFrenchPrice(data[key]));
+            } else {
+                placeholder.text(data[key]);
+            }
+        }
+    };
+
+    exports.formatFrenchPrice = function(number) {
+        var str = number.toString();
+        str = str.replace('.', ',');
+        return str + '&nbsp;€';
     };
 
     return exports;
