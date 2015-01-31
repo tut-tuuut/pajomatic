@@ -4,8 +4,8 @@ email: agnes.haasser+pajomatic@gmail.com
 description: >
   Parents employeurs d'assistantes maternelles, ceci est une petite calculatrice développée
   par l’une d’entre vous, afin de vous aider à calculer les montants à déclarer à Pajemploi à chaque fin de mois.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://tut-tuuut.github.io/pajomatic/" # the base hostname & protocol for your site
+baseurl: "/pajomatic/" # the subpath of your site, e.g. /blog/
+url: "http://tut-tuuut.github.io" # the base hostname & protocol for your site
 twitter_username: tut_tuuut
 github_username:  tut-tuuut
 
