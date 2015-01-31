@@ -27,16 +27,19 @@ var pajomatic_view = function () {
         return finalData;
     };
 
-    exports.display = function (data, element) {
+    exports.display = function (data, element, id_prefix) {
         var placeholder;
+        id_prefix = id_prefix || 'out_';
         for (key in data) {
             if (!data.hasOwnProperty(key)) continue;
-            placeholder = element.find('#'+key);
+            placeholder = element.find('#' + id_prefix + key);
             if (!placeholder) {
                 continue;
             }
-            if (placeholder.hasClass('number')) {
+            if (placeholder.hasClass('euros')) {
                 placeholder.html(exports.formatFrenchPrice(data[key]));
+            } else if (placeholder.hasClass('number')) {
+                placeholder.text(parseInt(data[key]));
             } else {
                 placeholder.text(data[key]);
             }
