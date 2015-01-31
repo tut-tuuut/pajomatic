@@ -12,7 +12,10 @@ title: Mensualisation sur une année incomplète — Pajomatic
         <legend>Contrat</legend>
 
         <div class="form-group">
-          <label for="nb_semaines">Nombre de semaines d'accueil par an</label>
+          <label for="nb_semaines">
+            Nombre de semaines d'accueil par an
+            <i class="glyphicon glyphicon-question-sign" data-toggle="popover" data-trigger="focus" data-content="Entrez ici le nombre de semaines pendant lesquelles votre enfant est accueilli par l’assistante maternelle."></i>
+          </label>
           {% include form/input-group.html id="nb_semaines" addon="semaines" %}
         </div>
 
