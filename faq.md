@@ -25,7 +25,7 @@ J'ai écrit ce calculateur en me basant sur différentes sources que j'ai suppos
 
 * les pages d'aide du site Pajemploi ;
 * les gentilles dames du centre Pajemploi lui-même (via le formulaire de contact) ;
-* les gentilles dames des RAM du 8e arrondissement de Lyon.
+* les gentilles dames des <acronym name="Relais d'assistantes maternelles">RAM</acronym> du 8e arrondissement de Lyon.
 
 Cela dit, il n'est pas exclu qu'il subsiste des bugs ou des erreurs d'interprétation. Soyez attentif(ve) si le Pajomatic vous donne un résultat très différent de vos propres calculs. N'hésitez pas à me poser la question (voir plus bas).
 
@@ -53,10 +53,14 @@ Ensuite, créez un rapport de bug sur Github en décrivant bien votre problème 
 
 ## Je suis en année complète / en accueil occasionnel / en garde partagée / dans une situation exotique non couverte par le Pajomatic : quand la fonctionnalité sera-t-elle disponible ?
 
-Soyons honnêtes : dans la mesure où il s'agit d'un projet personnel codé sur du temps libre, si vous êtes la seule personne à demander, il y a des chances pour que la fonctionnalité ne soit jamais disponible… sauf si vous la codez vous-même. ;)
+Hmmm… un jour… peut-être ?
 
-Cela dit, vous n'êtes sûrement pas seul(e)… donc n'hésitez pas à demander.
+N'hésitez pas à demander, en tout cas. Vous n'êtes sûrement pas la seule personne intéressée.
 
-## Comment contribuer ?
+
+## Comment contribuer au développement ?
 
 En lisant avec attention le fichier Readme.md du code source… quand je l'aurai écrit ! :D
+
+En court : j'ai fait un site jekyll pour pouvoir mutualiser du code commun (en-tête, liens, morceaux de formulaire…) donc il faut se palucher l'installation de ruby et de la gem bundler, exécuter `bundle install` puis `jekyll serve -w`… Ensuite, le code fonctionnel est situé dans les fichiers model.js, view.js et controller.js.
+
