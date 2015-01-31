@@ -10,4 +10,10 @@ $(document).ready(function () {
         calculateAndDisplay();
         event.preventDefault();
     });
+    // init help bubbles
+    var popoverOptions = {
+        placement: 'top',
+        selector: '[data-toggle=popover]',
+    }
+    $('body').popover(popoverOptions);
 });
