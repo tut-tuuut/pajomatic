@@ -14,7 +14,7 @@ title: Mensualisation sur une année incomplète — Pajomatic
         <div class="form-group">
           <label for="nb_semaines">
             Nombre de semaines d'accueil par an
-            <i class="glyphicon glyphicon-question-sign" data-toggle="popover" data-trigger="focus" data-content="Entrez ici le nombre de semaines pendant lesquelles votre enfant est accueilli par l’assistante maternelle."></i>
+            {% include form/help.html content="Entrez ici le nombre de semaines pendant lesquelles votre enfant est accueilli par l’assistante maternelle." %}
           </label>
           {% include form/input-group.html id="nb_semaines" addon="semaines" %}
         </div>
@@ -25,7 +25,10 @@ title: Mensualisation sur une année incomplète — Pajomatic
         </div>
 
         <div class="form-group">
-          <label>Nombre d'heures par semaine</label>
+          <label>
+            Nombre d'heures par semaine
+            {% include form/help.html content="L'assistante maternelle peut travailler au maximum 45 heures « normales » par semaine. Au-delà, les heures sont majorées (à un taux qu'il faut négocier avec l'assistante maternelle). Par exemple, si elle travaille 48 heures par semaine, il y a 45 heures normales et 3 heures majorées." %}
+          </label>
           <div class="row">
             <div class="col-md-6">
               {% include form/input-group.html id="nb_heures_normales" addon="heures normales" %}
@@ -37,12 +40,16 @@ title: Mensualisation sur une année incomplète — Pajomatic
 
         </div>
           <div class="form-group">
-          <label for="salaire_net_normal">Salaire horaire net d'une heure normale</label>
+          <label for="salaire_net_normal">
+            Salaire horaire net d'une heure normale
+          </label>
           {% include form/input-group.html id="salaire_net_normal" addon="€" %}
         </div>
 
         <div class="form-group">
-        <label for="majoration_heures_majorees">Majoration des heures majorées</label>
+        <label for="majoration_heures_majorees">
+          Majoration des heures majorées
+        </label>
           {% include form/input-group.html id="majoration_heures_majorees" addon="%" %}
       </div>
 
@@ -52,7 +59,7 @@ title: Mensualisation sur une année incomplète — Pajomatic
         </div>
 
         <div class="form-group">
-          <label>Indemnités de repas</label>
+          <label>Indemnités de repas {% include form/help.html content="Si l'assistante maternelle facture un montant journalier, sans distinguer repas et goûter, remplissez simplement la case « repas »." %}</label>
           <div class="row">
             <div class="col-md-6">
               {% include form/input-group.html id="indemnite_repas" addon="€ par repas" %}
@@ -69,12 +76,12 @@ title: Mensualisation sur une année incomplète — Pajomatic
         <legend>Mois en cours</legend>
 
         <div class="form-group">
-          <label for="nb_jours_accueil_reel">Nombre de jours d'accueil réels dans le mois</label>
+          <label for="nb_jours_accueil_reel">Nombre de jours d'accueil réels dans le mois {% include form/help.html content="Le nombre de jours où votre enfant a été gardé par l'assistante maternelle pour ce mois-ci. Il sert à calculer le montant des indemnités, ces dernières n'étant pas mensualisables." %}</label>
           {% include form/input-group.html id="nb_jours_accueil_reel" addon="jours" %}
         </div>
 
         <div class="form-group">
-          <label>Congés payés</label>
+          <label>Congés payés {% include form/help.html content="Le montant payé ce mois-ci au titre des congés payés et le nombre de jours <strong>correspondant à ce montant.</strong>" %}</label>
           <div class="row">
             <div class="col-md-6">
               {% include form/input-group.html id="nb_jours_conges_payes" addon="jours" %}
@@ -86,7 +93,7 @@ title: Mensualisation sur une année incomplète — Pajomatic
         </div>
 
         <div class="form-group">
-          <label>Heures supplémentaires</label>
+          <label>Heures supplémentaires {% include form/help.html content="Les heures complémentaires sont celles qui ne sont pas prévues au contrat de travail, mais qui ne vont pas au-delà de 45 heures hebdomadaires.<br>Dans le deuxième champ, entrez les heures majorées (au-delà de 45 heures) non prévues au contrat." %}</label>
           <div class="row">
             <div class="col-md-6">
               {% include form/input-group.html id="nb_supp_complementaires" addon="heures complémentaires" %}
@@ -98,15 +105,20 @@ title: Mensualisation sur une année incomplète — Pajomatic
         </div>
 
         <div class="form-group">
-          <label>Absences non rémunérées</label>
+          <label>Heures d'absence non rémunérées {% include form/help.html content="Les heures d'absence (de l'assmat ou de l'enfant) qui ne sont pas rémunérées et qui sont donc retirées du salaire.<br>Note : le calcul des absences n'est pas encore fonctionnel." %}</label>
           <div class="row">
             <div class="col-md-6">
-              {% include form/input-group.html id="absences_nb_jours" addon="jours" %}
+              {% include form/input-group.html id="absences_nb_heures_normales" addon="heures normales" %}
             </div>
             <div class="col-md-6">
-              {% include form/input-group.html id="absences_nb_heures" addon="heures" %}
+              {% include form/input-group.html id="absences_nb_heures_majorees" addon="heures majorées" %}
             </div>
           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="absences_nb_jours">Jours d'absence non rémunérés {% include form/help.html content="Le nombre de jours à retirer du compte pour le salaire.<br>Note : le calcul des absences n'est pas encore fonctionnel." %}</label>
+          {% include form/input-group.html id="absences_nb_jours" addon="jours" %}
         </div>
       </fieldset>
     </div>
