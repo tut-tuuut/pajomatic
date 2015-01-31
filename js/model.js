@@ -4,8 +4,6 @@ var pajomatic_model = (function (undefined) {
     exports = {};
 
     exports.calculatePajemploiDeclaration = function (input) {
-        console.log(input);
-
         var nb_heures_normales_mensualise = input.nb_semaines * input.nb_heures_normales / 12;
         var nb_heures_majorees_mensualise = input.nb_semaines * input.nb_heures_majorees / 12;
         var nb_heures_majorees = Math.round(nb_heures_majorees_mensualise + input.nb_supp_majorees);
@@ -30,7 +28,6 @@ var pajomatic_model = (function (undefined) {
             indemnites_entretien : 0.00,
             indemnites_repas : 0.00
         };
-        console.log(output);
         return output;
     };
 
