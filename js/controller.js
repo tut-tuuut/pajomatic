@@ -13,6 +13,7 @@ $(document).ready(function () {
     $('#incomplete_year_input').on('submit', function(event) {
         calculateAndDisplay();
         event.preventDefault();
+        window.history.pushState({},"",'?'+$('#incomplete_year_input').serialize());
     });
     // init help bubbles
     var popoverOptions = {
