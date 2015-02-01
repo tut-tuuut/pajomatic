@@ -5,7 +5,7 @@ title: Mensualisation sur une année incomplète — Pajomatic
 
 <h1>Mensualisation sur une année incomplète</h1>
 <h2>Données</h2>
-<form action="" id="incomplete_year_input">
+<form action="" name="incomplete_year_input" id="incomplete_year_input">
   <div class="row">
     <div class="col-md-6">
       <fieldset>
@@ -181,11 +181,6 @@ title: Mensualisation sur une année incomplète — Pajomatic
       <div class="panel-heading">Attention</div>
       <div class="panel-body">Vous dépassez le plafond de 5 SMIC. La CAF ne va pas vous verser l'aide si vous déclarez cela.</div>
     </div>-->
-    <h3 class="hidden-print">Actions</h3>
-    <div class="btn-group hidden-print" role="toolbar">
-      <button onclick="window.print();" type="button" class="btn btn-default">Imprimer <i class="glyphicon glyphicon-print"></i></button>
-      <!--<button type="button" class="btn btn-default">Exporter <i class="glyphicon glyphicon glyphicon-envelope"></i></button>
-      <button type="button" class="btn btn-default">Partager <i class="glyphicon glyphicon-star"></i></button>-->
-    </div>
+    {% include actions.html %}
   </div>
 </div>
