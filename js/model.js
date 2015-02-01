@@ -31,7 +31,7 @@ var pajomatic_model = (function (undefined) {
             salaire_net_total : salaire_net_total,
             indemnites_entretien : indemnites_entretien,
             indemnites_repas : indemnites_repas,
-            total_a_payer : salaire_net_total + indemnites_repas + indemnites_entretien
+            total_a_payer : Math.round((salaire_net_total + indemnites_repas + indemnites_entretien)*100)/100
         };
         return output;
     };
