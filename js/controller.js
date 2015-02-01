@@ -4,6 +4,10 @@ $(document).ready(function () {
         var result = pajomatic_model.calculatePajemploiDeclaration(input);
         pajomatic_view.display(result, $('#incomplete_year_output'));
     };
+
+    url2form('incomplete_year_input');
+    calculateAndDisplay();
+
     // observe changes on input form
     $('#incomplete_year_input').on('change', 'input', calculateAndDisplay);
     $('#incomplete_year_input').on('submit', function(event) {
