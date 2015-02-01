@@ -3,7 +3,7 @@ var pajomatic_model = (function (undefined) {
 
     exports = {};
 
-    exports.calculatePajemploiDeclaration = function (input) {
+    exports.calculateAnneeIncomplete = function (input) {
         var nb_heures_normales_mensualise = input.nb_semaines * input.nb_heures_normales / 12;
         var nb_heures_majorees_mensualise = input.nb_semaines * input.nb_heures_majorees / 12;
         var nb_heures_majorees = Math.round(nb_heures_majorees_mensualise + input.nb_supp_majorees);
