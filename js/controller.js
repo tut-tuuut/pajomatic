@@ -2,10 +2,12 @@ $(document).ready(function () {
     var output_container = $('#incomplete_year_output');
     var input_form = $('#incomplete_year_input');
     var saved_url = $('#saved_url');
+    var input_reminder = $('#input_reminder');
     var calculateAndDisplay = function (event) {
         var input = pajomatic_view.extractFormData('incomplete_year_input');
         var result = pajomatic_model.calculatePajemploiDeclaration(input);
         pajomatic_view.display(result, output_container);
+        pajomatic_view.display(input, input_reminder, 'in_');
         window.history.pushState({},"",'?'+input_form.serialize());
         saved_url.text(window.location.href);
     };

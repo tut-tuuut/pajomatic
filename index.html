@@ -5,7 +5,7 @@ title: Mensualisation sur une année incomplète — Pajomatic
 
 <h1>Mensualisation sur une année incomplète</h1>
 <h2>Données</h2>
-<form action="" name="incomplete_year_input" id="incomplete_year_input">
+<form class="hidden-print" action="" name="incomplete_year_input" id="incomplete_year_input">
   <div class="row">
     <div class="col-md-6">
       <fieldset>
@@ -127,6 +127,53 @@ title: Mensualisation sur une année incomplète — Pajomatic
     <button type="submit" class="btn btn-primary btn-lg" id="submit">Calculer</button>
   </div>
 </form>
+<table id="input_reminder" class="table table-bordered visible-print">
+  <tr>
+    <th scope="col">Contrat</th>
+    <th scope="col">Mois en cours</th>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li><strong id="in_nb_semaines"></strong> semaines d'accueil par an</li>
+        <li><strong id="in_nb_jours_par_semaine"></strong> jours d'accueil par semaine</li>
+        <li><strong id="in_nb_heures_normales"></strong> heures normales par semaine et <strong id="in_nb_heures_majorees"></strong> heures majorées par semaine</li>
+        <li>Salaire net d'une heure normale : <strong id="in_salaire_net_normal" class="euros"></strong>, majoré de <strong id="in_majoration_heures_majorees"></strong>&nbsp;% au-delà de la 46<sup>e</sup> heure hebdomadaire</li>
+        <li>Indemnité d'entretien : <strong id="in_indemnite_entretien" class="euros"></strong> par jour</li>
+        <li>
+          Indemnités de repas :
+          <ul>
+            <li><strong id="in_indemnite_repas" class="euros"></strong> par repas</li>
+            <li><strong id="in_indemnite_gouter" class="euros"></strong> par goûter</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li><strong id="in_nb_jours_accueil_reel"></strong> jours d'accueil réels</li>
+        <li>Congés :
+          <ul>
+            <li><strong id="in_nb_jours_conges_payes"></strong> jours</li>
+            <li><strong class="euros" id="in_montant_conges_payes"></strong></li>
+          </ul>
+        </li>
+        <li>Heures supplémentaires :
+          <ul>
+            <li><strong id="in_nb_supp_complementaires"></strong> heures complémentaires</li>
+            <li><strong id="in_nb_supp_majorees"></strong> heures majorées</li>
+          </ul>
+        <li>Absences :
+          <ul>
+            <li><strong id="in_absences_nb_jours"></strong> jours</li>
+            <li><strong id="in_absences_nb_heures_normales"></strong> heures normales</li>
+            <li><strong id="in_absences_nb_heures_majorees"></strong> heures majorées</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
 <h2>Résultats des calculs</h2>
 <div class="row" id="incomplete_year_output">
   <div class="col-md-6">
