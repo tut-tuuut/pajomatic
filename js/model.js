@@ -3,7 +3,7 @@ var pajomatic_model = (function (undefined) {
 
     exports = {};
 
-    exports.calculatePajemploiDeclaration = function (input) {
+    exports.calculateAnneeIncomplete = function (input) {
         var nb_heures_normales_mensualise = input.nb_semaines * input.nb_heures_normales / 12;
         var nb_heures_majorees_mensualise = input.nb_semaines * input.nb_heures_majorees / 12;
         var nb_heures_majorees = Math.round(nb_heures_majorees_mensualise + input.nb_supp_majorees);
@@ -31,7 +31,7 @@ var pajomatic_model = (function (undefined) {
             salaire_net_total : salaire_net_total,
             indemnites_entretien : indemnites_entretien,
             indemnites_repas : indemnites_repas,
-            total_a_payer : salaire_net_total + indemnites_repas + indemnites_entretien
+            total_a_payer : Math.round((salaire_net_total + indemnites_repas + indemnites_entretien)*100)/100
         };
         return output;
     };
