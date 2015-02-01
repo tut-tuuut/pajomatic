@@ -14,6 +14,7 @@ $(document).ready(function () {
         calculateAndDisplay();
         event.preventDefault();
         window.history.pushState({},"",'?'+$('#incomplete_year_input').serialize());
+        $('#saved_url').text(window.location.href);
     });
     // init help bubbles
     var popoverOptions = {
