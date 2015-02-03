@@ -14,3 +14,9 @@ footer {
    margin-top: .5em;
    border-top: 1px solid #ddd;
 }
+
+@media print {
+	.pbia {
+		page-break-inside: avoid;
+	}
+}
