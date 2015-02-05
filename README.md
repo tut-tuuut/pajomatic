@@ -23,13 +23,13 @@ Ces instructions sont valables pour des systèmes Unix (Mac OS ou Linux). Il exi
 
 ### Alternative avec docker
 
-Si docker est installé sur votre poste.
+Si docker est installé sur votre poste :
 
 1. Placez-vous à la racine du projet.
 2. Lancez `docker run --rm -v "$PWD:/src" -p 4000:4000 grahamc/jekyll serve --watch`
 3. Ouvrez votre navigateur préféré avec l'url `localhost:4000/pajomatic/`
 
-Normalement, les modifications faites dans le code sont disponibles aprés un simple rafraîchissement dans le navigateur.
+Normalement, les modifications faites dans le code sont disponibles après un simple rafraîchissement dans le navigateur.
 
 ## Comment contribuer ?
 
