@@ -5,8 +5,6 @@ var pajomatic_view = function () {
 
     is_numeric = /\d+(?:[.,]\d{0,2})?/;
     // at least one number which may be followed by one comma or dot and some other digits
-    clean_number = /,/;
-
 
     exports.extractFormData = function (formId) {
         var form = $('#' + formId);
