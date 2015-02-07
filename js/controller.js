@@ -21,7 +21,8 @@ $(document).ready(function () {
         debug : true,
         errorPlacement : function(error, element) {
             element.closest('.input-group').after(error);
-        }
+        },
+        errorClass : 'text-danger'
     });
     // observe changes on input form
     input_form.on('change', 'input', calculateAndDisplay);
