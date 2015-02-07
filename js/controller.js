@@ -41,6 +41,16 @@ $(document).ready(function () {
                 max : {
                     param: 46
                 }
+            },
+            nb_jours_par_semaine : {
+                number: true,
+                range: [1, 7] // maybe maximum is 6 actually?
+            },
+            nb_heures_normales : {
+                number: true,
+                max: {
+                    param: 45
+                }
             }
         },
         messages : {
@@ -52,6 +62,12 @@ $(document).ready(function () {
                     }
                     return "Vous devez offrir au moins 5 semaines de congés payés à votre assmat (donc 47 semaines d’accueil au maximum)."
                 }
+            },
+            nb_heures_normales : {
+                max : "Au-delà de 45 heures par semaine, le salaire est majoré. Par exemple, si votre assmat travaille 48 heures par semaine, saisissez 45 heures normales et 3 heures majorées."
+            },
+            majoration_heures_majorees : {
+                required : "Même si vous ne prévoyez pas d’heures majorées au contrat, vous devez décider d’un taux de majoration avec votre assmat."
             }
         }
     });
