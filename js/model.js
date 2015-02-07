@@ -1,9 +1,25 @@
 var pajomatic_model = (function (undefined) {
     var exports;
 
+    var validateInputAnneeIncomplete = function (input) {
+        if (input.nb_semaines == 47) {
+            alert("Un accueil de 47 semaines par an correspond à une année complète. Les règles de calcul sont différentes.");
+        } else if (input.nb_semaines > 47) {
+            alert("Vous ne pouvez pas faire travailler une assistante maternelle plus de 47 semaines par an.");
+        }
+        if (input.nb_heures_normales > 45) {
+            alert("Il y a au maximum 45 heures normales par semaine. Reportez les heures au-delà dans la case « heures majorées ».");
+        }
+        if (input.nb_jours_par_semaine > 7) {
+            alert("Vous ne pouvez pas faire travailler votre assistante maternelle plus de 7 jours par semaine. Non. Vraiment.");
+        }
+    };
+
     exports = {};
 
     exports.calculateAnneeIncomplete = function (input) {
+        validateInputAnneeIncomplete(input);
+
         var nb_heures_normales_mensualise = input.nb_semaines * input.nb_heures_normales / 12;
         var nb_heures_majorees_mensualise = input.nb_semaines * input.nb_heures_majorees / 12;
         var nb_heures_majorees = Math.round(nb_heures_majorees_mensualise + input.nb_supp_majorees);
