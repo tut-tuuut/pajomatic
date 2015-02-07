@@ -3,6 +3,7 @@
            name="{{ include.id }}"
            type="text"
            class="form-control"
-           aria-describedby="addon-{{ include.id }}">
+           aria-describedby="addon-{{ include.id }}"
+           {% if include.required %}required{% endif %}>
     <span class="input-group-addon" id="addon-{{ include.id }}">{{ include.addon }}</span>
 </div>
