@@ -1376,7 +1376,7 @@ $.extend($.validator.messages, {
 	url: "Veuillez fournir une adresse URL valide.",
 	date: "Veuillez fournir une date valide.",
 	dateISO: "Veuillez fournir une date valide (ISO).",
-	number: "Veuillez fournir un numéro valide.",
+	number: "Veuillez fournir un nombre valide.",
 	digits: "Veuillez fournir seulement des chiffres.",
 	creditcard: "Veuillez fournir un numéro de carte de crédit valide.",
 	equalTo: "Veuillez fournir encore la même valeur.",

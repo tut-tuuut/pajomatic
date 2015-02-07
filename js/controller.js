@@ -19,6 +19,7 @@ $(document).ready(function () {
     // validate form
     input_form.validate({
         debug : true,
+        // presentation rules for twitter bootstrap CSS
         errorPlacement : function(error, element) {
             element.closest('.input-group').after(error);
         },
@@ -32,6 +33,26 @@ $(document).ready(function () {
             $(element).closest('.input-group')
                 .addClass('has-success')
                 .removeClass('has-error');
+        },
+        // validation rules specific for this form
+        rules : {
+            nb_semaines : {
+                number : true,
+                max : {
+                    param: 46
+                }
+            }
+        },
+        messages : {
+            nb_semaines : {
+                max : function (maxval, element) {
+                    var value = parseInt($(element).val(), 10);
+                    if (value == 47) {
+                        return "47 semaines correspondent à une année complète. Les règles de calcul diffèrent."
+                    }
+                    return "Vous devez offrir au moins 5 semaines de congés payés à votre assmat (donc 47 semaines d’accueil au maximum)."
+                }
+            }
         }
     });
     // observe changes on input form
