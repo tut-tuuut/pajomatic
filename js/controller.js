@@ -16,6 +16,8 @@ $(document).ready(function () {
     url2form('incomplete_year_input');
     calculateAndDisplay();
 
+    // validate form
+    input_form.validate({debug:true});
     // observe changes on input form
     input_form.on('change', 'input', calculateAndDisplay);
     input_form.on('submit', function(event) {

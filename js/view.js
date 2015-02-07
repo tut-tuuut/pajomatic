@@ -19,7 +19,7 @@ var pajomatic_view = function () {
                 clean_value = parseFloat(is_numeric.exec(value)[0].replace(',','.'));
             } else {
                 clean_value = 0;
-                $('[name='+name+']').val(clean_value);
+                //$('[name='+name+']').val(clean_value);
             }
             finalData[name] = clean_value;
 
