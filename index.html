@@ -16,12 +16,12 @@ title: Mensualisation sur une année incomplète — Pajomatic
             Nombre de semaines d'accueil par an
             {% include form/help.html content="Entrez ici le nombre de semaines pendant lesquelles votre enfant est accueilli par l’assistante maternelle." %}
           </label>
-          {% include form/input-group.html id="nb_semaines" addon="semaines" %}
+          {% include form/input-group.html id="nb_semaines" addon="semaines" required=true %}
         </div>
 
         <div class="form-group">
           <label for="nb_jours_par_semaine">Nombre de jours d'accueil par semaine</label>
-          {% include form/input-group.html id="nb_jours_par_semaine" addon="jours" %}
+          {% include form/input-group.html id="nb_jours_par_semaine" addon="jours" required=true %}
         </div>
 
         <div class="form-group">
@@ -31,10 +31,10 @@ title: Mensualisation sur une année incomplète — Pajomatic
           </label>
           <div class="row">
             <div class="col-md-6">
-              {% include form/input-group.html id="nb_heures_normales" addon="heures normales" %}
+              {% include form/input-group.html id="nb_heures_normales" addon="heures normales" required=true %}
             </div>
             <div class="col-md-6">
-              {% include form/input-group.html id="nb_heures_majorees" addon="heures majorées" %}
+              {% include form/input-group.html id="nb_heures_majorees" addon="heures majorées" required=false %}
             </div>
         </div>
 
