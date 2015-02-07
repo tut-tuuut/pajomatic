@@ -18,7 +18,6 @@ $(document).ready(function () {
 
     // validate form
     input_form.validate({
-        debug : true,
         // presentation rules for twitter bootstrap CSS
         errorPlacement : function(error, element) {
             element.closest('.input-group').after(error);
