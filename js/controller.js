@@ -22,7 +22,17 @@ $(document).ready(function () {
         errorPlacement : function(error, element) {
             element.closest('.input-group').after(error);
         },
-        errorClass : 'text-danger'
+        errorClass : 'text-danger',
+        highlight : function(element, errorClass) {
+            $(element).closest('.input-group')
+                .addClass('has-error')
+                .removeClass('has-success');
+        },
+        unhighlight : function(element, errorClass) {
+            $(element).closest('.input-group')
+                .addClass('has-success')
+                .removeClass('has-error');
+        }
     });
     // observe changes on input form
     input_form.on('change', 'input', calculateAndDisplay);
