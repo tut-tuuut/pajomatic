@@ -50,6 +50,12 @@ $(document).ready(function () {
                 max: {
                     param: 45
                 }
+            },
+            salaire_net_normal : {
+                number: true,
+                max: {
+                    param: pajomatic_model.getSalaireMinimumNet()
+                }
             }
         },
         messages : {
