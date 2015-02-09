@@ -1,7 +1,32 @@
 var pajomatic_model = (function (undefined) {
     var exports;
 
+    var AMOUNT_5_SMIC_NET = 36.91; // 5*9,61 brut
+    var AMOUNT_5_SMIC_NET_ALSACE_MOSELLE = 36.19;
+    var MINIMUM_SALAIRE_NET = 2.09;
+    var MINIMUM_SALAIRE_NET_ALSACE_MOSELLE = 2.05;
+    var MINIMUM_INDEMNITE_ENTRETIEN = 2.99;
+
+
     exports = {};
+
+    exports.get5SmicNet = function(is_alsace_moselle) {
+        if (is_alsace_moselle) {
+            return AMOUNT_5_SMIC_NET_ALSACE_MOSELLE;
+        }
+        return AMOUNT_5_SMIC_NET;
+    }
+
+    exports.getSalaireMinimumNet = function(is_alsace_moselle) {
+        if (is_alsace_moselle) {
+            return MINIMUM_SALAIRE_NET_ALSACE_MOSELLE;
+        }
+        return MINIMUM_SALAIRE_NET;
+    }
+
+    exports.getIndemniteEntretienMinimum = function(is_alsace_moselle) {
+        return MINIMUM_INDEMNITE_ENTRETIEN;
+    }
 
     exports.calculateAnneeIncomplete = function (input) {
         var nb_heures_normales_mensualise = input.nb_semaines * input.nb_heures_normales / 12;
