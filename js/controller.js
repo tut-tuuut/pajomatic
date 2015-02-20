@@ -70,9 +70,31 @@ $(document).ready(function () {
             }
         }
     });
+
+    var calculateNbOfMeals = (function () {
+        var nb_days_input = $('#nb_jours_accueil_reel');
+        var meals_wrap = $('#wrap_nb_of_meals');
+        var to_update = $('.nb-days-if-omad')
+        return function () {
+            var omad = parseInt(meals_wrap.find('[type=radio][name=one_meal_a_day]:checked').val(), 10);
+            if (omad) {
+                var nb_days = parseInt(nb_days_input.val(), 10);
+                to_update.each(function(i, el) {
+                    if (el.tagName === 'INPUT') {
+                        $(el).val(nb_days);
+                    } else {
+                        $(el).text(nb_days);
+                    }
+                });
+            }
+        }
+    })();
+    calculateNbOfMeals();
     // observe changes on input form
     input_form.on('change', 'input', calculateAndDisplay);
+    input_form.on('change', '[name=one_meal_a_day], [name=nb_jours_accueil_reel]', calculateNbOfMeals)
     input_form.on('submit', function(event) {
+        calculateNbOfMeals();
         calculateAndDisplay();
         event.preventDefault();
     });

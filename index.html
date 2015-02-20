@@ -81,6 +81,11 @@ title: Mensualisation sur une année incomplète — Pajomatic
         </div>
 
         <div class="form-group">
+          <label>Nombre de repas {% include form/help.html content="Par défaut, on considère qu'il y a un repas et un goûter par jour. Vous pouvez affiner ces valeurs par défaut." %}</label>
+          {% include form/nb-of-meals.html %}
+        </div>
+
+        <div class="form-group">
           <label>Congés payés {% include form/help.html content="Le montant payé ce mois-ci au titre des congés payés et le nombre de jours <strong>correspondant à ce montant.</strong>" %}</label>
           <div class="row">
             <div class="col-md-6">
@@ -152,6 +157,12 @@ title: Mensualisation sur une année incomplète — Pajomatic
     <td>
       <ul>
         <li><strong id="in_nb_jours_accueil_reel"></strong> jours d'accueil réels</li>
+        <li>Nombre de repas :
+          <ul>
+            <li><strong id="in_nb_repas"></strong> repas</li>
+            <li><strong id="in_nb_gouters"></strong> goûters</li>
+          </ul>
+        </li>
         <li>Congés :
           <ul>
             <li><strong id="in_nb_jours_conges_payes"></strong> jours</li>
