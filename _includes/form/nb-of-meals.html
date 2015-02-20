@@ -1,11 +1,11 @@
-<div class="row">
+<div class="row" id="wrap_nb_of_meals">
     <div class="col-md-5">
         <div class="input-group">
             <label class="input-group-addon">
                 <input type="radio" value="1" name="one_meal_a_day" id="omad_1">
             </label>
             <label class="form-control" for="omad_1">
-                21 repas et 21 goûters
+                <span class="nb-days-if-omad"></span> repas et <span class="nb-days-if-omad"></span> goûters
             </label>
         </div>
     </div>
@@ -17,14 +17,14 @@
             <input id="nb_repas"
                    name="nb_repas"
                    type="text"
-                   class="form-control"
+                   class="form-control nb-days-if-omad"
                    aria-describedby="addon-nb_repas"
                    {% if include.required %}required{% endif %}>
             <span class="input-group-addon" id="addon-nb_repas">repas et</span>
             <input id="nb_gouters"
                    name="nb_gouters"
                    type="text"
-                   class="form-control"
+                   class="form-control nb-days-if-omad"
                    aria-describedby="addon-nb_gouters"
                    {% if include.required %}required{% endif %}>
             <span class="input-group-addon" id="addon-nb_gouters">goûters</span>
