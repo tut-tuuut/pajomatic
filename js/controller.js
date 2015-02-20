@@ -89,11 +89,12 @@ $(document).ready(function () {
             }
         }
     })();
-
+    calculateNbOfMeals();
     // observe changes on input form
     input_form.on('change', 'input', calculateAndDisplay);
     input_form.on('change', '[name=one_meal_a_day], [name=nb_jours_accueil_reel]', calculateNbOfMeals)
     input_form.on('submit', function(event) {
+        calculateNbOfMeals();
         calculateAndDisplay();
         event.preventDefault();
     });
