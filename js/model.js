@@ -19,7 +19,7 @@ var pajomatic_model = (function (undefined) {
 
         var nb_jours_reel = input.nb_jours_accueil_reel;
         var indemnites_entretien = input.indemnite_entretien * nb_jours_reel;
-        var indemnites_repas = (input.indemnite_repas + input.indemnite_gouter) * nb_jours_reel;
+        var indemnites_repas = input.indemnite_repas * input.nb_repas + input.indemnite_gouter * input.nb_gouters;
 
         var output = {
             nb_heures_normales : Math.round(nb_heures_normales_mensualise),
