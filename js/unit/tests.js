@@ -1,6 +1,3 @@
-var input = {};
-var output = {};
-
 function getBaseInput() {
   return { 
       nb_semaines : 0, 
@@ -234,8 +231,6 @@ QUnit.test("Cas réel avril 2015", function(assert) {
   input.nb_gouters = 21;
   input.nb_jours_accueil_reel = 21;
   input.indemnite_entretien = 3.50;
-
-
 
   var subject = pajomatic_model.calculateAnneeIncomplete(input);
   assert.equal(
