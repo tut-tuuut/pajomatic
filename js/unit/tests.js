@@ -139,3 +139,41 @@ QUnit.test("Indemnités de repas", function (assert) {
     "Le montant de l'indemnité de repas est correct."
   );
 });
+
+
+QUnit.test("Heures complémentaires", function (assert) {
+  var input = getBaseInput();
+  input.nb_semaines = 44;
+  input.nb_jours_par_semaine = 5;
+  input.nb_heures_normales = 45;
+  input.salaire_net_normal = 3.37;
+  input.nb_supp_complementaires = 4;
+
+  var subject = pajomatic_model.calculateAnneeIncomplete(input);
+
+  assert.equal(
+    subject.nb_heures_normales,
+    165,
+    "Le nombre d’heures normales est bien calculé."
+  );
+  assert.equal(
+    subject.nb_heures_majorees,
+    0,
+    "Le nombre d’heures majorées est bien calculé."
+  );
+  assert.equal(
+    subject.nb_jours_activite,
+    19,
+    "Le nombre de jours d'activité est bien calculé."
+  );
+  assert.equal(
+    subject.total_a_payer,
+    556.05 + input.salaire_net_normal * input.nb_supp_complementaires,
+    "Le montant total à payer est bien calculé."
+  );
+  assert.equal(
+    subject.salaire_net_total,
+    556.05 + input.salaire_net_normal * input.nb_supp_complementaires,
+    "Le salaire net total est bien calculé."
+  );
+});
