@@ -40,7 +40,7 @@ QUnit.test("Mensualisation sans heures majorées", function(assert) {
   input.nb_semaines = 44;
   input.nb_jours_par_semaine = 5;
   input.nb_heures_normales = 45;
-  input.salaire_horaire_net_normal = 3.37;
+  input.salaire_net_normal = 3.37;
 
   var subject = pajomatic_model.calculateAnneeIncomplete(input);
 
@@ -58,6 +58,16 @@ QUnit.test("Mensualisation sans heures majorées", function(assert) {
     subject.nb_jours_activite,
     19,
     "Le nombre de jours d'activité est bien calculé."
+  );
+  assert.equal(
+    subject.total_a_payer,
+    556.05,
+    "Le montant total à payer est bien calculé."
+  );
+  assert.equal(
+    subject.salaire_net_total,
+    556.05,
+    "Le salaire net total est bien calculé."
   );
 });
 
