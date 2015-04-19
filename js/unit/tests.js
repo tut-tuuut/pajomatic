@@ -217,3 +217,60 @@ QUnit.test("Heures supplémentaires majorées", function(assert) {
     "Le salaire net total est bien calculé."
   );
 });
+
+
+QUnit.test("Cas réel avril 2015", function(assert) {
+  var input = getBaseInput();
+  input.nb_semaines = 44;
+  input.nb_jours_par_semaine = 5;
+  input.nb_heures_normales = 45;
+  input.nb_heures_majorees = 4;
+  input.salaire_net_normal = 3.50;
+  input.nb_supp_majorees = 2;
+  input.majoration_heures_majorees = 20;
+  input.nb_repas = 21;
+  input.indemnite_repas = 3.00;
+  input.indemnite_gouter = 2.00;
+  input.nb_gouters = 21;
+  input.nb_jours_accueil_reel = 21;
+  input.indemnite_entretien = 3.50;
+
+
+
+  var subject = pajomatic_model.calculateAnneeIncomplete(input);
+  assert.equal(
+    subject.nb_heures_normales,
+    165,
+    "Le nombre d’heures normales est bien calculé."
+  );
+  assert.equal(
+    subject.nb_heures_majorees,
+    17,
+    "Le nombre d’heures majorées est bien calculé."
+  );
+  assert.equal(
+    subject.nb_jours_activite,
+    19,
+    "Le nombre de jours d'activité est bien calculé."
+  );
+  assert.equal(
+    subject.total_a_payer,
+    826.00,
+    "Le montant total à payer est bien calculé."
+  );
+  assert.equal(
+    subject.salaire_net_total,
+    647.50,
+    "Le salaire net total est bien calculé."
+  );
+  assert.equal(
+    subject.indemnites_repas,
+    105,
+    "Le montant de l'indemnité de repas est correct."
+  );
+  assert.equal(
+    subject.indemnites_entretien,
+    73.50,
+    "Le montant de l'indemnité d'entretien est bien calculé."
+  );
+});
