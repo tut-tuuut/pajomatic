@@ -177,3 +177,43 @@ QUnit.test("Heures complémentaires", function (assert) {
     "Le salaire net total est bien calculé."
   );
 });
+
+
+QUnit.test("Heures supplémentaires majorées", function(assert) {
+  var input = getBaseInput();
+  input.nb_semaines = 44;
+  input.nb_jours_par_semaine = 5;
+  input.nb_heures_normales = 45;
+  input.nb_heures_majorees = 3;
+  input.salaire_net_normal = 3.37;
+  input.nb_supp_majorees = 4;
+  input.majoration_heures_majorees = 20;
+
+  var subject = pajomatic_model.calculateAnneeIncomplete(input);
+
+  assert.equal(
+    subject.nb_heures_normales,
+    165,
+    "Le nombre d’heures normales est bien calculé."
+  );
+  assert.equal(
+    subject.nb_heures_majorees,
+    15,
+    "Le nombre d’heures majorées est bien calculé."
+  );
+  assert.equal(
+    subject.nb_jours_activite,
+    19,
+    "Le nombre de jours d'activité est bien calculé."
+  );
+  assert.equal(
+    subject.total_a_payer,
+    616.71,
+    "Le montant total à payer est bien calculé."
+  );
+  assert.equal(
+    subject.salaire_net_total,
+    616.71,
+    "Le salaire net total est bien calculé."
+  );
+});
