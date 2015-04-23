@@ -39,6 +39,13 @@ var pajomatic_model = (function (undefined) {
 
 
     exports.calculateAnneeComplete = function (input) {
+//  input.nb_jours_par_semaine = 4;
+//  input.nb_heures_normales = 32;
+//  input.salaire_net_normal = 3.00;
+//  input.nb_supp_majorees = 2;
+//  input.majoration_heures_majorees = 17;
+
+        var salaire_net_total = input.nb_heures_normales * input.salaire_net_normal * 52 / 12;
         var output = {
             nb_heures_normales          : 0,
             nb_jours_activite           : 0,
@@ -46,7 +53,7 @@ var pajomatic_model = (function (undefined) {
             salaire_horaire_net_normal  : 0,
             nb_heures_majorees          : 0,
             nb_heures_complementaires   : 0,
-            salaire_net_total           : 0,
+            salaire_net_total           : salaire_net_total,
             indemnites_entretien        : 0,
             indemnites_repas            : 0,
             total_a_payer               : 0
