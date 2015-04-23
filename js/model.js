@@ -37,5 +37,23 @@ var pajomatic_model = (function (undefined) {
         return output;
     };
 
+
+    exports.calculateAnneeComplete = function (input) {
+        var output = {
+            nb_heures_normales          : 0,
+            nb_jours_activite           : 0,
+            nb_jours_conges_payes       : 0,
+            salaire_horaire_net_normal  : 0,
+            nb_heures_majorees          : 0,
+            nb_heures_complementaires   : 0,
+            salaire_net_total           : 0,
+            indemnites_entretien        : 0,
+            indemnites_repas            : 0,
+            total_a_payer               : 0
+        };
+        return output;
+    };
+
+
     return exports;
 })();
