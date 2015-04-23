@@ -356,3 +356,49 @@ QUnit.test("Heures supplémentaires complémentaires et majorées", function(ass
     "Le salaire net total est bien calculé."
   );
 });
+
+
+//QUnit.test("8 jours d'absence", function(assert) {
+//  // http://www.pajemploi.urssaf.fr/files/live/sites/pajewebinfo/files/contributed/pdf/employeur_ama/ExempleRemunerationAccueilRegulierAMA.pdf
+//  var input = getBaseInput('année complète');
+//// Le mois suivant, Josette est
+//// absente pour motif familial
+//// pendant 2 semaines 
+//// (absences non
+//// rémunérées). Elle ne garde pas Laura pendant
+//// 8 jours soit 64 heures au total (8 j x 8 h).
+//// Josette aurait dû, réellement, garder Laura 17
+//// jours ce mois ci, soit 136 heures (17 j x 8 h), or,
+//// elle ne la garde que 9 jours
+//
+//  input.nb_jours_par_semaine = 4;
+//  input.nb_heures_normales = 32;
+//  input.salaire_net_normal = 3.00;
+//  input.majoration_heures_majorees = 17; // ça marche pas "3,50 € pour les heures majorées"
+//
+//  input.absences_nb_heures_normales = 64; 
+//  input.absences_nb_jours = 8;
+//
+//  var subject = pajomatic_model.calculateAnneeComplete(input);
+//  assert.equal(
+//    subject.nb_heures_normales,
+//    73,
+//    "Le nombre d’heures normales est bien calculé."
+//  );
+//  assert.equal(
+//    subject.nb_heures_majorees,
+//    0,
+//    "Le nombre d’heures majorées est bien calculé."
+//  );
+//  assert.equal(
+//    subject.nb_jours_activite,
+//    10,
+//    "Le nombre de jours d'activité est bien calculé."
+//  );
+//  assert.equal(
+//    subject.salaire_net_total,
+//    220.24,
+//    "Le salaire net total est bien calculé."
+//  );
+//});
+//
