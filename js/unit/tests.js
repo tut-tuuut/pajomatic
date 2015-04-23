@@ -285,7 +285,7 @@ QUnit.test("Cas proposé sur Pajemploi #1", function(assert) {
   input.nb_jours_par_semaine = 4;
   input.nb_heures_normales = 32;
   input.salaire_net_normal = 3.00;
-  input.nb_supp_majorees = 2;
+  input.nb_supp_majorees = 0;
   input.majoration_heures_majorees = 17; // ça marche pas "3,50 € pour les heures majorées"
 
   var subject = pajomatic_model.calculateAnneeComplete(input);

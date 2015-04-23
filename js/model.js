@@ -42,13 +42,20 @@ var pajomatic_model = (function (undefined) {
 //  input.nb_jours_par_semaine = 4;
 //  input.nb_heures_normales = 32;
 //  input.salaire_net_normal = 3.00;
-//  input.nb_supp_majorees = 2;
+//  input.nb_supp_majorees = 0;
 //  input.majoration_heures_majorees = 17;
 
-        var salaire_net_total = input.nb_heures_normales * input.salaire_net_normal * 52 / 12;
+        var nb_jours_activite = input.nb_jours_par_semaine * 52 / 12;
+        var nb_heures_normales = input.nb_heures_normales * 52 / 12;
+        var nb_heures_majorees = input.nb_heures_majorees * 52 / 12 + input.nb_supp_majorees;
+        var salaire_heures_normales = nb_heures_normales * input.salaire_net_normal;
+        var salaire_horaire_majore = input.salaire_net_normal * (100 + input.majoration_heures_majorees) / 12;
+        var salaire_heures_majorees = nb_heures_majorees * salaire_horaire_majore;
+        var salaire_net_total = salaire_heures_normales + salaire_heures_majorees;
+
         var output = {
-            nb_heures_normales          : 0,
-            nb_jours_activite           : 0,
+            nb_heures_normales          : Math.round(nb_heures_normales),
+            nb_jours_activite           : Math.ceil(nb_jours_activite),
             nb_jours_conges_payes       : 0,
             salaire_horaire_net_normal  : 0,
             nb_heures_majorees          : 0,
