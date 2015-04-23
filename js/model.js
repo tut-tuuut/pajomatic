@@ -48,8 +48,8 @@ var pajomatic_model = (function (undefined) {
         var nb_jours_activite = input.nb_jours_par_semaine * 52 / 12;
         var nb_heures_normales = input.nb_heures_normales * 52 / 12;
         var nb_heures_majorees = input.nb_heures_majorees * 52 / 12 + input.nb_supp_majorees;
-        var salaire_heures_normales = nb_heures_normales * input.salaire_net_normal;
-        var salaire_horaire_majore = input.salaire_net_normal * (100 + input.majoration_heures_majorees) / 12;
+        var salaire_heures_normales = (nb_heures_normales + input.nb_supp_complementaires) * input.salaire_net_normal;
+        var salaire_horaire_majore = input.salaire_horaire_majore || input.salaire_net_normal * (100 + input.majoration_heures_majorees) / 100 ;
         var salaire_heures_majorees = nb_heures_majorees * salaire_horaire_majore;
         var salaire_net_total = salaire_heures_normales + salaire_heures_majorees;
 
@@ -57,9 +57,9 @@ var pajomatic_model = (function (undefined) {
             nb_heures_normales          : Math.round(nb_heures_normales),
             nb_jours_activite           : Math.ceil(nb_jours_activite),
             nb_jours_conges_payes       : 0,
-            salaire_horaire_net_normal  : 0,
-            nb_heures_majorees          : 0,
-            nb_heures_complementaires   : 0,
+            salaire_horaire_net_normal  : input.salaire_horaire_net_normal,
+            nb_heures_majorees          : Math.round(nb_heures_majorees),
+            nb_heures_complementaires   : Math.round(input.nb_supp_complementaires),
             salaire_net_total           : salaire_net_total,
             indemnites_entretien        : 0,
             indemnites_repas            : 0,

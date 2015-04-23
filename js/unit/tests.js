@@ -272,7 +272,7 @@ QUnit.test("Cas réel avril 2015", function(assert) {
 
 QUnit.module("Année complète");
 
-QUnit.test("Cas proposé sur Pajemploi #1", function(assert) {
+QUnit.test("Mensualisation simple", function(assert) {
   // http://www.pajemploi.urssaf.fr/files/live/sites/pajewebinfo/files/contributed/pdf/employeur_ama/ExempleRemunerationAccueilRegulierAMA.pdf
   var input = getBaseInput('année complète');
 // Josette gardera Laura du mardi
@@ -307,6 +307,52 @@ QUnit.test("Cas proposé sur Pajemploi #1", function(assert) {
   assert.equal(
     subject.salaire_net_total,
     416.00,
+    "Le salaire net total est bien calculé."
+  );
+});
+
+
+QUnit.test("Heures supplémentaires complémentaires et majorées", function(assert) {
+  // http://www.pajemploi.urssaf.fr/files/live/sites/pajewebinfo/files/contributed/pdf/employeur_ama/ExempleRemunerationAccueilRegulierAMA.pdf
+  var input = getBaseInput('année complète');
+// Josette gardera Laura du mardi
+// au vendredi de 9 h à 17 h soit
+// 32 h par semaine et 47 semaines
+// au total dans l’année.
+// Le salaire horaire net prévu au contrat de travail
+// est de 3 € et 3,50 € pour les heures majorées
+
+  input.nb_jours_par_semaine = 4;
+  input.nb_heures_normales = 32;
+  input.salaire_net_normal = 3.00;
+  input.nb_supp_complementaires = 13;
+  input.nb_supp_majorees = 5;
+  input.salaire_horaire_majore = 3.50;
+
+  var subject = pajomatic_model.calculateAnneeComplete(input);
+  assert.equal(
+    subject.nb_heures_normales,
+    139,
+    "Le nombre d’heures normales est bien calculé."
+  );
+  assert.equal(
+    subject.nb_heures_majorees,
+    5,
+    "Le nombre d’heures majorées est bien calculé."
+  );
+  assert.equal(
+    subject.nb_heures_complementaires,
+    13,
+    "Le nombre d’heures complémentaires est bien calculé."
+  );
+  assert.equal(
+    subject.nb_jours_activite,
+    18,
+    "Le nombre de jours d'activité est bien calculé."
+  );
+  assert.equal(
+    subject.salaire_net_total,
+    472.50,
     "Le salaire net total est bien calculé."
   );
 });
