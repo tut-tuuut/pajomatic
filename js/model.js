@@ -14,7 +14,7 @@ var pajomatic_model = (function (undefined) {
 
         var nb_jours_activite = nb_jours_mensualise - input.absences_nb_jours;
         var salaire_h_normales = (nb_heures_normales + nb_heures_complementaires) * input.salaire_net_normal;
-        var salaire_majore = input.salaire_net_normal * (100 + input.majoration_heures_majorees) / 100;
+        var salaire_majore = input.salaire_horaire_majore || input.salaire_net_normal * (100 + input.majoration_heures_majorees) / 100;
         var salaire_h_majorees = nb_heures_majorees * salaire_majore;
         var salaire_hors_conges = (salaire_h_majorees + salaire_h_normales);
         var salaire_net_total = Math.round((salaire_hors_conges + input.montant_conges_payes)*100)/100;

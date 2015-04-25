@@ -1,4 +1,4 @@
-function getBaseInput() {
+function getBaseInput(type) {
   return { 
       nb_semaines : 0, 
       nb_jours_par_semaine : 0, 
@@ -64,6 +64,42 @@ QUnit.test("Mensualisation sans heures majorées", function(assert) {
   assert.equal(
     subject.salaire_net_total,
     556.05,
+    "Le salaire net total est bien calculé."
+  );
+});
+
+QUnit.test("Mensualisation sans heures majorées - exemple Pajemploi", function(assert) {
+  var input = getBaseInput();
+  input.nb_semaines = 37;
+  input.nb_jours_par_semaine = 4;
+  input.nb_heures_normales = 40;
+  input.salaire_net_normal = 3.00;
+
+  var subject = pajomatic_model.calculateAnneeIncomplete(input);
+
+  assert.equal(
+    subject.nb_heures_normales,
+    123,
+    "Le nombre d’heures normales est bien calculé."
+  );
+  assert.equal(
+    subject.nb_heures_majorees,
+    0,
+    "Le nombre d’heures majorées est bien calculé."
+  );
+  assert.equal(
+    subject.nb_jours_activite,
+    13,
+    "Le nombre de jours d'activité est bien calculé."
+  );
+  assert.equal(
+    subject.total_a_payer,
+    370.00,
+    "Le montant total à payer est bien calculé."
+  );
+  assert.equal(
+    subject.salaire_net_total,
+    370.00,
     "Le salaire net total est bien calculé."
   );
 });
@@ -211,6 +247,53 @@ QUnit.test("Heures supplémentaires majorées", function(assert) {
   assert.equal(
     subject.salaire_net_total,
     616.71,
+    "Le salaire net total est bien calculé."
+  );
+});
+
+
+
+
+
+QUnit.test("Heures complémentaires et majorées (exemple Pajemploi)", function(assert) {
+  var input = getBaseInput();
+  input.nb_supp_majorees = 4;
+  input.majoration_heures_majorees = 20;
+
+  var input = getBaseInput();
+  input.nb_semaines = 37;
+  input.nb_jours_par_semaine = 4;
+  input.nb_heures_normales = 40;
+  input.salaire_net_normal = 3.00;
+  input.nb_supp_majorees = 5;
+  input.nb_supp_complementaires = 5;
+  input.salaire_horaire_majore = 3.50;
+
+  var subject = pajomatic_model.calculateAnneeIncomplete(input);
+
+  assert.equal(
+    subject.nb_heures_normales,
+    123,
+    "Le nombre d’heures normales est bien calculé."
+  );
+  assert.equal(
+    subject.nb_heures_complementaires,
+    5,
+    "Le nombre d’heures complémentaires est bien calculé."
+  );
+  assert.equal(
+    subject.nb_heures_majorees,
+    5,
+    "Le nombre d’heures majorées est bien calculé."
+  );
+  assert.equal(
+    subject.nb_jours_activite,
+    13,
+    "Le nombre de jours d'activité est bien calculé."
+  );
+  assert.equal(
+    subject.salaire_net_total,
+    402.50,
     "Le salaire net total est bien calculé."
   );
 });
