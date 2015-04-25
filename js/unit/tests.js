@@ -440,6 +440,104 @@ QUnit.test("Heures supplémentaires complémentaires et majorées", function(ass
   );
 });
 
+QUnit.test("Calcul des indemnités d’entretien", function (assert) {
+  var input = getBaseInput();
+  input.indemnite_entretien = 3.37;
+  input.nb_jours_accueil_reel = 14;
+
+  var subject = pajomatic_model.calculateAnneeComplete(input);
+
+  assert.equal(
+    subject.indemnites_entretien,
+    47.18, // 3.37 * 14
+    "Le montant de l'indemnité d'entretien est bien calculé."
+  );
+});
+
+
+QUnit.test("Indemnités de repas", function (assert) {
+  var input = getBaseInput();
+  input.indemnite_repas = 3.00;
+  input.indemnite_gouter = 2.00;
+  input.nb_repas = 21;
+  input.nb_gouters = 20;
+
+  var subject = pajomatic_model.calculateAnneeComplete(input);
+
+  assert.equal(
+    subject.indemnites_repas,
+    103,
+    "Le montant de l'indemnité de repas est correct."
+  );
+});
+
+QUnit.test("Calcul du montant total avec heures supp et indemnités de repas/entretien", function(assert) {
+  // http://www.pajemploi.urssaf.fr/files/live/sites/pajewebinfo/files/contributed/pdf/employeur_ama/ExempleRemunerationAccueilRegulierAMA.pdf
+  var input = getBaseInput('année complète');
+// Josette gardera Laura du mardi
+// au vendredi de 9 h à 17 h soit
+// 32 h par semaine et 47 semaines
+// au total dans l’année.
+// Le salaire horaire net prévu au contrat de travail
+// est de 3 € et 3,50 € pour les heures majorées
+
+  input.nb_jours_par_semaine = 4;
+  input.nb_heures_normales = 32;
+  input.salaire_net_normal = 3.00;
+  input.nb_supp_complementaires = 13;
+  input.nb_supp_majorees = 5;
+  input.salaire_horaire_majore = 3.50;
+
+  input.indemnite_repas = 3.00;
+  input.indemnite_gouter = 2.00;
+  input.nb_repas = 21;
+  input.nb_gouters = 20;
+
+  input.indemnite_entretien = 3.37;
+  input.nb_jours_accueil_reel = 14;
+
+  var subject = pajomatic_model.calculateAnneeComplete(input);
+  assert.equal(
+    subject.nb_heures_normales,
+    139,
+    "Le nombre d’heures normales est bien calculé."
+  );
+  assert.equal(
+    subject.nb_heures_majorees,
+    5,
+    "Le nombre d’heures majorées est bien calculé."
+  );
+  assert.equal(
+    subject.nb_heures_complementaires,
+    13,
+    "Le nombre d’heures complémentaires est bien calculé."
+  );
+  assert.equal(
+    subject.nb_jours_activite,
+    18,
+    "Le nombre de jours d'activité est bien calculé."
+  );
+  assert.equal(
+    subject.salaire_net_total,
+    472.50,
+    "Le salaire net total est bien calculé."
+  );
+  assert.equal(
+    subject.indemnites_entretien,
+    47.18, // 3.37 * 14
+    "Le montant de l'indemnité d'entretien est bien calculé."
+  );
+  assert.equal(
+    subject.indemnites_repas,
+    103,
+    "Le montant de l'indemnité de repas est correct."
+  );
+  assert.equal(
+    subject.total_a_payer,
+    622.68,
+    "Le montant total à payer est bien calculé."
+  );
+});
 
 //QUnit.test("8 jours d'absence", function(assert) {
 //  // http://www.pajemploi.urssaf.fr/files/live/sites/pajewebinfo/files/contributed/pdf/employeur_ama/ExempleRemunerationAccueilRegulierAMA.pdf

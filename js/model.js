@@ -62,6 +62,10 @@ var pajomatic_model = (function (undefined) {
         var salaire_net_total = salaire_heures_normales + salaire_heures_majorees;
 
 
+        var nb_jours_reel = input.nb_jours_accueil_reel;
+        var indemnites_entretien = input.indemnite_entretien * nb_jours_reel;
+        var indemnites_repas = input.indemnite_repas * input.nb_repas + input.indemnite_gouter * input.nb_gouters;
+
         var output = {
             nb_heures_normales          : Math.round(nb_heures_normales),
             nb_jours_activite           : Math.ceil(nb_jours_activite),
@@ -70,9 +74,9 @@ var pajomatic_model = (function (undefined) {
             nb_heures_majorees          : Math.round(nb_heures_majorees),
             nb_heures_complementaires   : Math.round(input.nb_supp_complementaires),
             salaire_net_total           : salaire_net_total,
-            indemnites_entretien        : 0,
-            indemnites_repas            : 0,
-            total_a_payer               : 0
+            indemnites_entretien        : indemnites_entretien,
+            indemnites_repas            : indemnites_repas,
+            total_a_payer               : Math.round((salaire_net_total + indemnites_repas + indemnites_entretien)*100)/100
         };
         return output;
     };
