@@ -15,6 +15,8 @@
     <script src="js/jquery.validate.js"></script>
     <script src="js/model.js"></script>
     <script src="js/view.js"></script>
-    <script src="js/controller.js"></script>
+    {% if page.controller %}
+    <script src="js/controller-{{ page.controller }}.js"></script>
+    {% endif %}
   </body>
 </html>

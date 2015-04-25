@@ -45,6 +45,7 @@ var pajomatic_view = function () {
     };
 
     exports.formatFrenchPrice = function(number) {
+        if (!number) { return '' }
         var str = number.toString();
         str = str.replace('.', ',');
         return str + '&nbsp;€';
