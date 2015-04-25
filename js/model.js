@@ -3,6 +3,11 @@ var pajomatic_model = (function (undefined) {
 
     exports = {};
 
+    var decimal = function (number) {
+        if (!number) { return 0; }
+        return Math.round(number * 100)/100;
+    }
+
     exports.calculateAnneeIncomplete = function (input) {
         var nb_heures_normales_mensualise = input.nb_semaines * input.nb_heures_normales / 12;
         var nb_heures_normales = nb_heures_normales_mensualise - input.absences_nb_heures_normales;
@@ -33,7 +38,7 @@ var pajomatic_model = (function (undefined) {
             salaire_net_total : salaire_net_total,
             indemnites_entretien : indemnites_entretien,
             indemnites_repas : indemnites_repas,
-            total_a_payer : Math.round((salaire_net_total + indemnites_repas + indemnites_entretien)*100)/100
+            total_a_payer : decimal(salaire_net_total + indemnites_repas + indemnites_entretien)
         };
         return output;
     };
@@ -70,13 +75,13 @@ var pajomatic_model = (function (undefined) {
             nb_heures_normales          : Math.round(nb_heures_normales),
             nb_jours_activite           : Math.ceil(nb_jours_activite),
             nb_jours_conges_payes       : 0,
-            salaire_horaire_net_normal  : input.salaire_horaire_net_normal,
+            salaire_horaire_net_normal  : decimal(input.salaire_net_normal),
             nb_heures_majorees          : Math.round(nb_heures_majorees),
             nb_heures_complementaires   : Math.round(input.nb_supp_complementaires),
-            salaire_net_total           : salaire_net_total,
-            indemnites_entretien        : indemnites_entretien,
-            indemnites_repas            : indemnites_repas,
-            total_a_payer               : Math.round((salaire_net_total + indemnites_repas + indemnites_entretien)*100)/100
+            salaire_net_total           : decimal(salaire_net_total),
+            indemnites_entretien        : decimal(indemnites_entretien),
+            indemnites_repas            : decimal(indemnites_repas),
+            total_a_payer               : decimal(salaire_net_total + indemnites_repas + indemnites_entretien)
         };
         return output;
     };
