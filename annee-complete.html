@@ -1,24 +1,16 @@
 ---
 layout: default
-title: Mensualisation sur une année incomplète — Pajomatic
-controller: annee-incomplete
+title: Mensualisation sur une année complète — Pajomatic
+controller: annee-complete
 ---
 
-<h1>Salaire d'une assistante maternelle - Mensualisation sur une année incomplète</h1>
+<h1>Salaire d'une assistante maternelle - Mensualisation sur une année complète</h1>
 <h2>Données</h2>
-<form class="hidden-print" action="" name="incomplete_year_input" id="incomplete_year_input">
+<form class="hidden-print" action="" name="complete_year_input" id="complete_year_input">
   <div class="row">
     <div class="col-md-6">
       <fieldset>
         <legend>Contrat</legend>
-
-        <div class="form-group">
-          <label for="nb_semaines">
-            Nombre de semaines d'accueil par an
-            {% include form/help.html content="Entrez ici le nombre de semaines pendant lesquelles votre enfant est accueilli par l’assistante maternelle." %}
-          </label>
-          {% include form/input-group.html id="nb_semaines" addon="semaines" required=true %}
-        </div>
 
         <div class="form-group">
           <label for="nb_jours_par_semaine">Nombre de jours d'accueil par semaine</label>
@@ -87,18 +79,6 @@ controller: annee-incomplete
         </div>
 
         <div class="form-group">
-          <label>Congés payés {% include form/help.html content="Le montant payé ce mois-ci au titre des congés payés et le nombre de jours <strong>correspondant à ce montant.</strong>" %}</label>
-          <div class="row">
-            <div class="col-md-6">
-              {% include form/input-group.html id="nb_jours_conges_payes" addon="jours" %}
-            </div>
-            <div class="col-md-6">
-              {% include form/input-group.html id="montant_conges_payes" addon="€" %}
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
           <label>Heures supplémentaires {% include form/help.html content="Les heures complémentaires sont celles qui ne sont pas prévues au contrat de travail, mais qui ne vont pas au-delà de 45 heures hebdomadaires.<br>Dans le deuxième champ, entrez les heures majorées (au-delà de 45 heures) non prévues au contrat." %}</label>
           <div class="row">
             <div class="col-md-6">
@@ -110,7 +90,7 @@ controller: annee-incomplete
           </div>
         </div>
 
-        <div class="form-group">
+        <!--<div class="form-group">
           <label>Heures d'absence non rémunérées {% include form/help.html content="Les heures d'absence (de l'assmat ou de l'enfant) qui ne sont pas rémunérées et qui sont donc retirées du salaire.<br>Note : le calcul des absences n'est pas encore fonctionnel." %}</label>
           <div class="row">
             <div class="col-md-6">
@@ -120,12 +100,12 @@ controller: annee-incomplete
               {% include form/input-group.html id="absences_nb_heures_majorees" addon="heures majorées" %}
             </div>
           </div>
-        </div>
+        </div>-->
 
-        <div class="form-group">
+        <!--<div class="form-group">
           <label for="absences_nb_jours">Jours d'absence non rémunérés {% include form/help.html content="Le nombre de jours à retirer du compte pour le salaire.<br>Note : le calcul des absences n'est pas encore fonctionnel." %}</label>
           {% include form/input-group.html id="absences_nb_jours" addon="jours" %}
-        </div>
+        </div>-->
       </fieldset>
     </div>
   </div>
@@ -141,7 +121,6 @@ controller: annee-incomplete
   <tr>
     <td>
       <ul>
-        <li><strong id="in_nb_semaines"></strong> semaines d'accueil par an</li>
         <li><strong id="in_nb_jours_par_semaine"></strong> jours d'accueil par semaine</li>
         <li><strong id="in_nb_heures_normales"></strong> heures normales par semaine et <strong id="in_nb_heures_majorees"></strong> heures majorées par semaine</li>
         <li>Salaire net d'une heure normale : <strong id="in_salaire_net_normal" class="euros"></strong>, majoré de <strong id="in_majoration_heures_majorees"></strong>&nbsp;% au-delà de la 46<sup>e</sup> heure hebdomadaire</li>
@@ -164,30 +143,24 @@ controller: annee-incomplete
             <li><strong id="in_nb_gouters"></strong> goûters</li>
           </ul>
         </li>
-        <li>Congés :
-          <ul>
-            <li><strong id="in_nb_jours_conges_payes"></strong> jours</li>
-            <li><strong class="euros" id="in_montant_conges_payes"></strong></li>
-          </ul>
-        </li>
         <li>Heures supplémentaires :
           <ul>
             <li><strong id="in_nb_supp_complementaires"></strong> heures complémentaires</li>
             <li><strong id="in_nb_supp_majorees"></strong> heures majorées</li>
           </ul>
-        <li>Absences :
+        <!--<li>Absences :
           <ul>
             <li><strong id="in_absences_nb_jours"></strong> jours</li>
             <li><strong id="in_absences_nb_heures_normales"></strong> heures normales</li>
             <li><strong id="in_absences_nb_heures_majorees"></strong> heures majorées</li>
-          </ul>
+          </ul>-->
         </li>
       </ul>
     </td>
   </tr>
 </table>
 <h2>Résultats des calculs</h2>
-<div class="row" id="incomplete_year_output">
+<div class="row" id="complete_year_output">
   <div class="col-md-6">
     <h3>À déclarer sur Pajemploi</h3>
     <table class="table table-bordered">
