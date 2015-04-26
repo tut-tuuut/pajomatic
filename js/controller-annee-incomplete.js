@@ -79,6 +79,7 @@ $(document).ready(function () {
             var omad = parseInt(meals_wrap.find('[type=radio][name=one_meal_a_day]:checked').val(), 10);
             if (omad) {
                 var nb_days = parseInt(nb_days_input.val(), 10);
+                if (!nb_days) { nb_days = 0; }
                 to_update.each(function(i, el) {
                     if (el.tagName === 'INPUT') {
                         $(el).val(nb_days);
