@@ -55,8 +55,8 @@ controller: annee-incomplete
       </div>
 
         <div class="form-group">
-        <label for="indemnite_entretien_1">Indemnité d'entretien, tranche 1</label>
-          {% include form/input-group.html id="indemnite_entretien_1" addon="€ par jour" required=true %}
+        <label for="indemnite_entretien">Indemnité d'entretien, tranche 1</label>
+          {% include form/input-group.html id="indemnite_entretien" addon="€ par jour" required=true %}
         </div>
 
         <div class="form-group">
@@ -92,8 +92,8 @@ controller: annee-incomplete
         <legend>Mois en cours</legend>
 
         <div class="form-group">
-          <label for="nb_jours_accueil_reel_1">Nombre de jours d'accueil réels dans le mois, tranche 1 {% include form/help.html content="Le nombre de jours où votre enfant a été gardé par l'assistante maternelle pour ce mois-ci, au tarif de la tranche 1. Il sert à calculer le montant des indemnités, ces dernières n'étant pas mensualisables." %}</label>
-          {% include form/input-group.html id="nb_jours_accueil_reel_1" addon="jours" required=true %}
+          <label for="nb_jours_accueil_reel">Nombre de jours d'accueil réels dans le mois, tranche 1 {% include form/help.html content="Le nombre de jours où votre enfant a été gardé par l'assistante maternelle pour ce mois-ci, au tarif de la tranche 1. Il sert à calculer le montant des indemnités, ces dernières n'étant pas mensualisables." %}</label>
+          {% include form/input-group.html id="nb_jours_accueil_reel" addon="jours" required=true %}
         </div>
 
         <div class="form-group">
