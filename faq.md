@@ -11,7 +11,7 @@ Il s'agit d'un projet personnel créé par… euh… moi-même : je m'appelle Ag
 
 Ce site n'est en rien affilié à Pajemploi ou à la CAF. Il a été développé assez rapidement sur mon temps libre (celui où je ne m'occupais ni du bébé, ni de mon emploi régulier).
 
-Ce site sert à aider les parents de jeunes enfants qui font garder leur bébé à calculer le salaire mensualisé de leur assistante maternelle… pour l'instant, seulement dans le cas où le salaire de l'assistante maternelle est mensualisé en année incomplète (moins de 47 semaines d'accueil par an).
+Ce site sert à aider les parents de jeunes enfants qui font garder leur bébé à calculer le salaire mensualisé de leur assistante maternelle… pour l'instant, seulement dans le cas de l'accueil régulier.
 
 ## Comment ça marche ?
 
@@ -51,7 +51,7 @@ Ensuite, créez un rapport de bug sur Github en décrivant bien votre problème 
 * le résultat obtenu par le Pajomatic ;
 * celui que vous attendiez à la place.
 
-## Je suis en année complète / en accueil occasionnel / en garde partagée / dans une situation exotique non couverte par le Pajomatic : quand la fonctionnalité sera-t-elle disponible ?
+## Je suis en accueil occasionnel / en garde partagée / dans une situation exotique non couverte par le Pajomatic : quand la fonctionnalité sera-t-elle disponible ?
 
 Hmmm… un jour… peut-être ?
 
@@ -60,7 +60,4 @@ N'hésitez pas à demander, en tout cas. Vous n'êtes sûrement pas la seule per
 
 ## Comment contribuer au développement ?
 
-En lisant avec attention le fichier Readme.md du code source… quand je l'aurai écrit ! :D
-
-En court : j'ai fait un site jekyll pour pouvoir mutualiser du code commun (en-tête, liens, morceaux de formulaire…) donc il faut se palucher l'installation de ruby et de la gem bundler, exécuter `bundle install` puis `jekyll serve -w`… Ensuite, le code fonctionnel est situé dans les fichiers model.js, view.js et controller.js.
-
+En lisant avec attention le fichier Readme.md du code source ! :D
