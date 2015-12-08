@@ -24,11 +24,11 @@ var pajomatic_model = (function (undefined) {
         var salaire_hors_conges = (salaire_h_majorees + salaire_h_normales);
         var salaire_net_total = Math.round((salaire_hors_conges + input.montant_conges_payes)*100)/100;
 
-        var nb_jours_reel_1 = input.nb_jours_accueil_reel_1;
+        var nb_jours_reel_1 = input.nb_jours_accueil_reel;
         var nb_jours_reel_2 = input.nb_jours_accueil_reel_2;
         var nb_jours_reel_3 = input.nb_jours_accueil_reel_3;
         var nb_jours_reel_4 = input.nb_jours_accueil_reel_4;
-        var indemnites_entretien_1 = input.indemnite_entretien_1 * nb_jours_reel_1;
+        var indemnites_entretien_1 = input.indemnite_entretien * nb_jours_reel_1;
         var indemnites_entretien_2 = input.indemnite_entretien_2 * nb_jours_reel_2;
         var indemnites_entretien_3 = input.indemnite_entretien_3 * nb_jours_reel_3;
         var indemnites_entretien_4 = input.indemnite_entretien_4 * nb_jours_reel_4;
@@ -74,11 +74,11 @@ var pajomatic_model = (function (undefined) {
         var salaire_heures_majorees = nb_heures_majorees * salaire_horaire_majore;
         var salaire_net_total = salaire_heures_normales + salaire_heures_majorees;
 
-        var nb_jours_reel_1 = input.nb_jours_accueil_reel_1;
+        var nb_jours_reel_1 = input.nb_jours_accueil_reel;
         var nb_jours_reel_2 = input.nb_jours_accueil_reel_2;
         var nb_jours_reel_3 = input.nb_jours_accueil_reel_3;
         var nb_jours_reel_4 = input.nb_jours_accueil_reel_4;
-        var indemnites_entretien_1 = input.indemnite_entretien_1 * nb_jours_reel_1;
+        var indemnites_entretien_1 = input.indemnite_entretien * nb_jours_reel_1;
         var indemnites_entretien_2 = input.indemnite_entretien_2 * nb_jours_reel_2;
         var indemnites_entretien_3 = input.indemnite_entretien_3 * nb_jours_reel_3;
         var indemnites_entretien_4 = input.indemnite_entretien_4 * nb_jours_reel_4;
