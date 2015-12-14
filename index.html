@@ -37,10 +37,10 @@ controller: annee-incomplete
             <div class="col-md-6">
               {% include form/input-group.html id="nb_heures_majorees" addon="heures majorées" required=false %}
             </div>
-        </div>
+          </div>
 
         </div>
-          <div class="form-group">
+        <div class="form-group">
           <label for="salaire_net_normal">
             Salaire horaire net d'une heure normale
           </label>
@@ -48,29 +48,29 @@ controller: annee-incomplete
         </div>
 
         <div class="form-group">
-        <label for="majoration_heures_majorees">
-          Majoration des heures majorées
-        </label>
+          <label for="majoration_heures_majorees">
+            Majoration des heures majorées
+          </label>
           {% include form/input-group.html id="majoration_heures_majorees" addon="%" required=true %}
-      </div>
+        </div>
 
         <div class="form-group">
-        <label for="indemnite_entretien">Indemnité d'entretien, tranche 1</label>
+          <label for="indemnite_entretien">Indemnité d'entretien, tranche 1</label>
           {% include form/input-group.html id="indemnite_entretien" addon="€ par jour" required=true %}
         </div>
 
         <div class="form-group">
-        <label for="indemnite_entretien_2">Indemnité d'entretien, tranche 2</label>
+          <label for="indemnite_entretien_2">Indemnité d'entretien, tranche 2</label>
           {% include form/input-group.html id="indemnite_entretien_2" addon="€ par jour" required=true %}
         </div>
 
         <div class="form-group">
-        <label for="indemnite_entretien_3">Indemnité d'entretien, tranche 3</label>
+          <label for="indemnite_entretien_3">Indemnité d'entretien, tranche 3</label>
           {% include form/input-group.html id="indemnite_entretien_3" addon="€ par jour" required=true %}
         </div>
 
         <div class="form-group">
-        <label for="indemnite_entretien_4">Indemnité d'entretien, tranche 4</label>
+          <label for="indemnite_entretien_4">Indemnité d'entretien, tranche 4</label>
           {% include form/input-group.html id="indemnite_entretien_4" addon="€ par jour" required=true %}
         </div>
 
@@ -205,66 +205,66 @@ controller: annee-incomplete
             <li><strong id="in_nb_supp_complementaires"></strong> heures complémentaires</li>
             <li><strong id="in_nb_supp_majorees"></strong> heures majorées</li>
           </ul>
-        <li>Absences :
-          <ul>
-            <li><strong id="in_absences_nb_jours"></strong> jours</li>
-            <li><strong id="in_absences_nb_heures_normales"></strong> heures normales</li>
-            <li><strong id="in_absences_nb_heures_majorees"></strong> heures majorées</li>
-          </ul>
-        </li>
-      </ul>
-    </td>
-  </tr>
-</table>
-<h2>Résultats des calculs</h2>
-<div class="row" id="incomplete_year_output">
-  <div class="col-md-6">
-    <h3>À déclarer sur Pajemploi</h3>
-    <table class="table table-bordered">
-      <tr>
-        <th scope="row">Nombre d'heures normales</th>
-        <td id="out_nb_heures_normales" class="number"></td>
-      </tr>
-      <tr>
-        <th scope="row">Nombre de jours d'activité</th>
-        <td id="out_nb_jours_activite" class="number"></td>
-      </tr>
-      <tr>
-        <th scope="row">Nombre de jours de congés payés</th>
-        <td id="out_nb_jours_conges_payes" class="number"></td>
-      </tr>
-      <tr>
-        <th scope="row">Salaire horaire net d'une heure normale</th>
-        <td id="out_salaire_horaire_net_normal" class="euros"></td>
-      </tr>
-      <tr>
-        <th scope="row">Nombre d'heures majorées</th>
-        <td id="out_nb_heures_majorees" class="number"></td>
-      </tr>
-      <tr>
-        <th scope="row">Nombre d'heures complémentaires</th>
-        <td id="out_nb_heures_complementaires" class="number"></td>
-      </tr>
-      <tr>
-        <th scope="row">Salaire net total</th>
-        <td id="out_salaire_net_total" class="euros"></td>
-      </tr>
-      <tr>
-        <th scope="row">Indemnités d'entretien</th>
-        <td id="out_indemnites_entretien" class="euros"></td>
-      </tr>
-      <tr>
-        <th scope="row">Indemnités de repas</th>
-        <td id="out_indemnites_repas" class="euros"></td>
-      </tr>
-    </table>
-  </div>
-  <div class="col-md-6">
-    <h3>Somme totale à payer</h3>
-    <div class="panel panel-default">
-      <div class="panel-body euros" id="out_total_a_payer">
-      </div>
+          <li>Absences :
+            <ul>
+              <li><strong id="in_absences_nb_jours"></strong> jours</li>
+              <li><strong id="in_absences_nb_heures_normales"></strong> heures normales</li>
+              <li><strong id="in_absences_nb_heures_majorees"></strong> heures majorées</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <h2>Résultats des calculs</h2>
+  <div class="row" id="incomplete_year_output">
+    <div class="col-md-6">
+      <h3>À déclarer sur Pajemploi</h3>
+      <table class="table table-bordered">
+        <tr>
+          <th scope="row">Nombre d'heures normales</th>
+          <td id="out_nb_heures_normales" class="number"></td>
+        </tr>
+        <tr>
+          <th scope="row">Nombre de jours d'activité</th>
+          <td id="out_nb_jours_activite" class="number"></td>
+        </tr>
+        <tr>
+          <th scope="row">Nombre de jours de congés payés</th>
+          <td id="out_nb_jours_conges_payes" class="number"></td>
+        </tr>
+        <tr>
+          <th scope="row">Salaire horaire net d'une heure normale</th>
+          <td id="out_salaire_horaire_net_normal" class="euros"></td>
+        </tr>
+        <tr>
+          <th scope="row">Nombre d'heures majorées</th>
+          <td id="out_nb_heures_majorees" class="number"></td>
+        </tr>
+        <tr>
+          <th scope="row">Nombre d'heures complémentaires</th>
+          <td id="out_nb_heures_complementaires" class="number"></td>
+        </tr>
+        <tr>
+          <th scope="row">Salaire net total</th>
+          <td id="out_salaire_net_total" class="euros"></td>
+        </tr>
+        <tr>
+          <th scope="row">Indemnités d'entretien</th>
+          <td id="out_indemnites_entretien" class="euros"></td>
+        </tr>
+        <tr>
+          <th scope="row">Indemnités de repas</th>
+          <td id="out_indemnites_repas" class="euros"></td>
+        </tr>
+      </table>
     </div>
+    <div class="col-md-6">
+      <h3>Somme totale à payer</h3>
+      <div class="panel panel-default">
+        <div class="panel-body euros" id="out_total_a_payer">
+        </div>
+      </div>
     <!--<h3>Pour information</h3>
     <div class="panel panel-danger">
       <div class="panel-heading">Attention</div>
