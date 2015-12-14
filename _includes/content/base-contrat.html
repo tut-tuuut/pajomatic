@@ -1,0 +1,74 @@
+<div class="form-group">
+  <label for="nb_jours_par_semaine">Nombre de jours d'accueil par semaine</label>
+  {% include form/input-group.html id="nb_jours_par_semaine" addon="jours" required=true %}
+</div>
+
+<div class="form-group">
+  <label>
+    Nombre d'heures par semaine
+    {% include form/help.html content="L'assistante maternelle peut travailler au maximum 45 heures « normales » par semaine. Au-delà, les heures sont majorées (à un taux qu'il faut négocier avec l'assistante maternelle). Par exemple, si elle travaille 48 heures par semaine, il y a 45 heures normales et 3 heures majorées." %}
+  </label>
+  <div class="row">
+    <div class="col-md-6">
+      {% include form/input-group.html id="nb_heures_normales" addon="heures normales" required=true %}
+    </div>
+    <div class="col-md-6">
+      {% include form/input-group.html id="nb_heures_majorees" addon="heures majorées" required=false %}
+    </div>
+  </div>
+
+</div>
+<div class="form-group">
+  <label for="salaire_net_normal">
+    Salaire horaire net d'une heure normale
+  </label>
+  {% include form/input-group.html id="salaire_net_normal" addon="€" required=true %}
+</div>
+
+<div class="form-group">
+  <label for="majoration_heures_majorees">
+    Majoration des heures majorées
+  </label>
+  {% include form/input-group.html id="majoration_heures_majorees" addon="%" required=true %}
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="indemnite_entretien">Indemnité d'entretien, tranche 1</label>
+      {% include form/input-group.html id="indemnite_entretien" addon="€ par jour" required=true %}
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="indemnite_entretien_2">Indemnité d'entretien, tranche 2</label>
+      {% include form/input-group.html id="indemnite_entretien_2" addon="€ par jour" required=true %}
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="indemnite_entretien_3">Indemnité d'entretien, tranche 3</label>
+      {% include form/input-group.html id="indemnite_entretien_3" addon="€ par jour" required=true %}
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="indemnite_entretien_4">Indemnité d'entretien, tranche 4</label>
+      {% include form/input-group.html id="indemnite_entretien_4" addon="€ par jour" required=true %}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label>Indemnités de repas {% include form/help.html content="Si l'assistante maternelle facture un montant journalier, sans distinguer repas et goûter, remplissez simplement la case « repas »." %}</label>
+  <div class="row">
+    <div class="col-md-6">
+      {% include form/input-group.html id="indemnite_repas" addon="€ par repas" %}
+    </div>
+    <div class="col-md-6">
+      {% include form/input-group.html id="indemnite_gouter" addon="€ par goûter" %}
+    </div>
+  </div>
+</div>
