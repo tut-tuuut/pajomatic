@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="nb_jours_accueil_reel">Nombre de jours d'accueil réels dans le mois, tranche 1 {% include form/help.html content="Le nombre de jours où votre enfant a été gardé par l'assistante maternelle pour ce mois-ci, au tarif de la tranche 1. Il sert à calculer le montant des indemnités, ces dernières n'étant pas mensualisables." %}</label>
+      {% include form/input-group.html id="nb_jours_accueil_reel" addon="jours" required=true %}
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="nb_jours_accueil_reel_2">Nombre de jours d'accueil réels dans le mois, tranche 2 {% include form/help.html content="Le nombre de jours où votre enfant a été gardé par l'assistante maternelle pour ce mois-ci, au tarif de la tranche 2. Il sert à calculer le montant des indemnités, ces dernières n'étant pas mensualisables." %}</label>
+      {% include form/input-group.html id="nb_jours_accueil_reel_2" addon="jours" required=true %}
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="nb_jours_accueil_reel_3">Nombre de jours d'accueil réels dans le mois, tranche 3 {% include form/help.html content="Le nombre de jours où votre enfant a été gardé par l'assistante maternelle pour ce mois-ci, au tarif de la tranche 3. Il sert à calculer le montant des indemnités, ces dernières n'étant pas mensualisables." %}</label>
+      {% include form/input-group.html id="nb_jours_accueil_reel_3" addon="jours" required=true %}
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="nb_jours_accueil_reel_4">Nombre de jours d'accueil réels dans le mois, tranche 4 {% include form/help.html content="Le nombre de jours où votre enfant a été gardé par l'assistante maternelle pour ce mois-ci, au tarif de la tranche 4. Il sert à calculer le montant des indemnités, ces dernières n'étant pas mensualisables." %}</label>
+      {% include form/input-group.html id="nb_jours_accueil_reel_4" addon="jours" required=true %}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label>Nombre de repas {% include form/help.html content="Par défaut, on considère qu'il y a un repas et un goûter par jour. Vous pouvez affiner ces valeurs par défaut." %}</label>
+  {% include form/nb-of-meals.html %}
+</div>
+
+<div class="form-group">
+  <label>Heures supplémentaires {% include form/help.html content="Les heures complémentaires sont celles qui ne sont pas prévues au contrat de travail, mais qui ne vont pas au-delà de 45 heures hebdomadaires.<br>Dans le deuxième champ, entrez les heures majorées (au-delà de 45 heures) non prévues au contrat." %}</label>
+  <div class="row">
+    <div class="col-md-6">
+      {% include form/input-group.html id="nb_supp_complementaires" addon="heures complémentaires" %}
+    </div>
+    <div class="col-md-6">
+      {% include form/input-group.html id="nb_supp_majorees" addon="heures majorées" %}
+    </div>
+  </div>
+</div>
+
+  <!--<div class="form-group">
+    <label>Heures d'absence non rémunérées {% include form/help.html content="Les heures d'absence (de l'assmat ou de l'enfant) qui ne sont pas rémunérées et qui sont donc retirées du salaire.<br>Note : le calcul des absences n'est pas encore fonctionnel." %}</label>
+    <div class="row">
+      <div class="col-md-6">
+        {% include form/input-group.html id="absences_nb_heures_normales" addon="heures normales" %}
+      </div>
+      <div class="col-md-6">
+        {% include form/input-group.html id="absences_nb_heures_majorees" addon="heures majorées" %}
+      </div>
+    </div>
+</div>-->
+
+  <!--<div class="form-group">
+    <label for="absences_nb_jours">Jours d'absence non rémunérés {% include form/help.html content="Le nombre de jours à retirer du compte pour le salaire.<br>Note : le calcul des absences n'est pas encore fonctionnel." %}</label>
+    {% include form/input-group.html id="absences_nb_jours" addon="jours" %}
+  </div>-->
