@@ -20,101 +20,15 @@ controller: annee-incomplete
           {% include form/input-group.html id="nb_semaines" addon="semaines" required=true %}
         </div>
 
-        <div class="form-group">
-          <label for="nb_jours_par_semaine">Nombre de jours d'accueil par semaine</label>
-          {% include form/input-group.html id="nb_jours_par_semaine" addon="jours" required=true %}
-        </div>
+        {% include content/base-contrat.html %}
 
-        <div class="form-group">
-          <label>
-            Nombre d'heures par semaine
-            {% include form/help.html content="L'assistante maternelle peut travailler au maximum 45 heures « normales » par semaine. Au-delà, les heures sont majorées (à un taux qu'il faut négocier avec l'assistante maternelle). Par exemple, si elle travaille 48 heures par semaine, il y a 45 heures normales et 3 heures majorées." %}
-          </label>
-          <div class="row">
-            <div class="col-md-6">
-              {% include form/input-group.html id="nb_heures_normales" addon="heures normales" required=true %}
-            </div>
-            <div class="col-md-6">
-              {% include form/input-group.html id="nb_heures_majorees" addon="heures majorées" required=false %}
-            </div>
-        </div>
-
-        </div>
-          <div class="form-group">
-          <label for="salaire_net_normal">
-            Salaire horaire net d'une heure normale
-          </label>
-          {% include form/input-group.html id="salaire_net_normal" addon="€" required=true %}
-        </div>
-
-        <div class="form-group">
-        <label for="majoration_heures_majorees">
-          Majoration des heures majorées
-        </label>
-          {% include form/input-group.html id="majoration_heures_majorees" addon="%" required=true %}
-      </div>
-
-        <div class="form-group">
-        <label for="indemnite_entretien">Indemnité d'entretien, tranche 1</label>
-          {% include form/input-group.html id="indemnite_entretien" addon="€ par jour" required=true %}
-        </div>
-
-        <div class="form-group">
-        <label for="indemnite_entretien_2">Indemnité d'entretien, tranche 2</label>
-          {% include form/input-group.html id="indemnite_entretien_2" addon="€ par jour" required=true %}
-        </div>
-
-        <div class="form-group">
-        <label for="indemnite_entretien_3">Indemnité d'entretien, tranche 3</label>
-          {% include form/input-group.html id="indemnite_entretien_3" addon="€ par jour" required=true %}
-        </div>
-
-        <div class="form-group">
-        <label for="indemnite_entretien_4">Indemnité d'entretien, tranche 4</label>
-          {% include form/input-group.html id="indemnite_entretien_4" addon="€ par jour" required=true %}
-        </div>
-
-        <div class="form-group">
-          <label>Indemnités de repas {% include form/help.html content="Si l'assistante maternelle facture un montant journalier, sans distinguer repas et goûter, remplissez simplement la case « repas »." %}</label>
-          <div class="row">
-            <div class="col-md-6">
-              {% include form/input-group.html id="indemnite_repas" addon="€ par repas" %}
-            </div>
-            <div class="col-md-6">
-              {% include form/input-group.html id="indemnite_gouter" addon="€ par goûter" %}
-            </div>
-          </div>
-        </div>
       </fieldset>
     </div>
     <div class="col-md-6">
       <fieldset>
         <legend>Mois en cours</legend>
 
-        <div class="form-group">
-          <label for="nb_jours_accueil_reel">Nombre de jours d'accueil réels dans le mois, tranche 1 {% include form/help.html content="Le nombre de jours où votre enfant a été gardé par l'assistante maternelle pour ce mois-ci, au tarif de la tranche 1. Il sert à calculer le montant des indemnités, ces dernières n'étant pas mensualisables." %}</label>
-          {% include form/input-group.html id="nb_jours_accueil_reel" addon="jours" required=true %}
-        </div>
-
-        <div class="form-group">
-          <label for="nb_jours_accueil_reel_2">Nombre de jours d'accueil réels dans le mois, tranche 2 {% include form/help.html content="Le nombre de jours où votre enfant a été gardé par l'assistante maternelle pour ce mois-ci, au tarif de la tranche 2. Il sert à calculer le montant des indemnités, ces dernières n'étant pas mensualisables." %}</label>
-          {% include form/input-group.html id="nb_jours_accueil_reel_2" addon="jours" required=true %}
-        </div>
-
-        <div class="form-group">
-          <label for="nb_jours_accueil_reel_3">Nombre de jours d'accueil réels dans le mois, tranche 3 {% include form/help.html content="Le nombre de jours où votre enfant a été gardé par l'assistante maternelle pour ce mois-ci, au tarif de la tranche 3. Il sert à calculer le montant des indemnités, ces dernières n'étant pas mensualisables." %}</label>
-          {% include form/input-group.html id="nb_jours_accueil_reel_3" addon="jours" required=true %}
-        </div>
-
-        <div class="form-group">
-          <label for="nb_jours_accueil_reel_4">Nombre de jours d'accueil réels dans le mois, tranche 4 {% include form/help.html content="Le nombre de jours où votre enfant a été gardé par l'assistante maternelle pour ce mois-ci, au tarif de la tranche 4. Il sert à calculer le montant des indemnités, ces dernières n'étant pas mensualisables." %}</label>
-          {% include form/input-group.html id="nb_jours_accueil_reel_4" addon="jours" required=true %}
-        </div>
-
-        <div class="form-group">
-          <label>Nombre de repas {% include form/help.html content="Par défaut, on considère qu'il y a un repas et un goûter par jour. Vous pouvez affiner ces valeurs par défaut." %}</label>
-          {% include form/nb-of-meals.html %}
-        </div>
+        {% include content/base-mois-en-cours.html %}
 
         <div class="form-group">
           <label>Congés payés {% include form/help.html content="Le montant payé ce mois-ci au titre des congés payés et le nombre de jours <strong>correspondant à ce montant.</strong>" %}</label>
@@ -127,35 +41,6 @@ controller: annee-incomplete
             </div>
           </div>
         </div>
-
-        <div class="form-group">
-          <label>Heures supplémentaires {% include form/help.html content="Les heures complémentaires sont celles qui ne sont pas prévues au contrat de travail, mais qui ne vont pas au-delà de 45 heures hebdomadaires.<br>Dans le deuxième champ, entrez les heures majorées (au-delà de 45 heures) non prévues au contrat." %}</label>
-          <div class="row">
-            <div class="col-md-6">
-              {% include form/input-group.html id="nb_supp_complementaires" addon="heures complémentaires" %}
-            </div>
-            <div class="col-md-6">
-              {% include form/input-group.html id="nb_supp_majorees" addon="heures majorées" %}
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Heures d'absence non rémunérées {% include form/help.html content="Les heures d'absence (de l'assmat ou de l'enfant) qui ne sont pas rémunérées et qui sont donc retirées du salaire.<br>Note : le calcul des absences n'est pas encore fonctionnel." %}</label>
-          <div class="row">
-            <div class="col-md-6">
-              {% include form/input-group.html id="absences_nb_heures_normales" addon="heures normales" %}
-            </div>
-            <div class="col-md-6">
-              {% include form/input-group.html id="absences_nb_heures_majorees" addon="heures majorées" %}
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="absences_nb_jours">Jours d'absence non rémunérés {% include form/help.html content="Le nombre de jours à retirer du compte pour le salaire.<br>Note : le calcul des absences n'est pas encore fonctionnel." %}</label>
-          {% include form/input-group.html id="absences_nb_jours" addon="jours" %}
-        </div>
       </fieldset>
     </div>
   </div>
@@ -163,101 +48,14 @@ controller: annee-incomplete
     <button type="submit" class="btn btn-primary btn-lg" id="submit">Calculer</button>
   </div>
 </form>
-<table id="input_reminder" class="table table-bordered visible-print">
-  <tr>
-    <th scope="col">Contrat</th>
-    <th scope="col">Mois en cours</th>
-  </tr>
-  <tr>
-    <td>
-      <ul>
-        <li><strong id="in_nb_semaines"></strong> semaines d'accueil par an</li>
-        <li><strong id="in_nb_jours_par_semaine"></strong> jours d'accueil par semaine</li>
-        <li><strong id="in_nb_heures_normales"></strong> heures normales par semaine et <strong id="in_nb_heures_majorees"></strong> heures majorées par semaine</li>
-        <li>Salaire net d'une heure normale : <strong id="in_salaire_net_normal" class="euros"></strong>, majoré de <strong id="in_majoration_heures_majorees"></strong>&nbsp;% au-delà de la 46<sup>e</sup> heure hebdomadaire</li>
-        <li>Indemnité d'entretien : <strong id="in_indemnite_entretien" class="euros"></strong> par jour</li>
-        <li>
-          Indemnités de repas :
-          <ul>
-            <li><strong id="in_indemnite_repas" class="euros"></strong> par repas</li>
-            <li><strong id="in_indemnite_gouter" class="euros"></strong> par goûter</li>
-          </ul>
-        </li>
-      </ul>
-    </td>
-    <td>
-      <ul>
-        <li><strong id="in_nb_jours_accueil_reel"></strong> jours d'accueil réels</li>
-        <li>Nombre de repas :
-          <ul>
-            <li><strong id="in_nb_repas"></strong> repas</li>
-            <li><strong id="in_nb_gouters"></strong> goûters</li>
-          </ul>
-        </li>
-        <li>Congés :
-          <ul>
-            <li><strong id="in_nb_jours_conges_payes"></strong> jours</li>
-            <li><strong class="euros" id="in_montant_conges_payes"></strong></li>
-          </ul>
-        </li>
-        <li>Heures supplémentaires :
-          <ul>
-            <li><strong id="in_nb_supp_complementaires"></strong> heures complémentaires</li>
-            <li><strong id="in_nb_supp_majorees"></strong> heures majorées</li>
-          </ul>
-        <li>Absences :
-          <ul>
-            <li><strong id="in_absences_nb_jours"></strong> jours</li>
-            <li><strong id="in_absences_nb_heures_normales"></strong> heures normales</li>
-            <li><strong id="in_absences_nb_heures_majorees"></strong> heures majorées</li>
-          </ul>
-        </li>
-      </ul>
-    </td>
-  </tr>
-</table>
+
+{% include content/input-reminder.html %}
+
 <h2>Résultats des calculs</h2>
 <div class="row" id="incomplete_year_output">
   <div class="col-md-6">
     <h3>À déclarer sur Pajemploi</h3>
-    <table class="table table-bordered">
-      <tr>
-        <th scope="row">Nombre d'heures normales</th>
-        <td id="out_nb_heures_normales" class="number"></td>
-      </tr>
-      <tr>
-        <th scope="row">Nombre de jours d'activité</th>
-        <td id="out_nb_jours_activite" class="number"></td>
-      </tr>
-      <tr>
-        <th scope="row">Nombre de jours de congés payés</th>
-        <td id="out_nb_jours_conges_payes" class="number"></td>
-      </tr>
-      <tr>
-        <th scope="row">Salaire horaire net d'une heure normale</th>
-        <td id="out_salaire_horaire_net_normal" class="euros"></td>
-      </tr>
-      <tr>
-        <th scope="row">Nombre d'heures majorées</th>
-        <td id="out_nb_heures_majorees" class="number"></td>
-      </tr>
-      <tr>
-        <th scope="row">Nombre d'heures complémentaires</th>
-        <td id="out_nb_heures_complementaires" class="number"></td>
-      </tr>
-      <tr>
-        <th scope="row">Salaire net total</th>
-        <td id="out_salaire_net_total" class="euros"></td>
-      </tr>
-      <tr>
-        <th scope="row">Indemnités d'entretien</th>
-        <td id="out_indemnites_entretien" class="euros"></td>
-      </tr>
-      <tr>
-        <th scope="row">Indemnités de repas</th>
-        <td id="out_indemnites_repas" class="euros"></td>
-      </tr>
-    </table>
+    {% include content/output-table.html %}
   </div>
   <div class="col-md-6">
     <h3>Somme totale à payer</h3>
