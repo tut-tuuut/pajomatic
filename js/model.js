@@ -10,14 +10,14 @@ var pajomatic_model = (function (undefined) {
 
     exports.calculateAnneeIncomplete = function (input) {
         var nb_heures_normales_mensualise = input.nb_semaines * input.nb_heures_normales / 12;
-        var nb_heures_normales = nb_heures_normales_mensualise - input.absences_nb_heures_normales;
+        var nb_heures_normales = nb_heures_normales_mensualise;
         var nb_heures_majorees_mensualise = input.nb_semaines * input.nb_heures_majorees / 12;
-        var nb_heures_majorees = nb_heures_majorees_mensualise + input.nb_supp_majorees - input.absences_nb_heures_majorees;
+        var nb_heures_majorees = nb_heures_majorees_mensualise + input.nb_supp_majorees;
         var nb_heures_complementaires = Math.round(input.nb_supp_complementaires);
 
         var nb_jours_mensualise = Math.ceil(input.nb_semaines * input.nb_jours_par_semaine / 12);
 
-        var nb_jours_activite = nb_jours_mensualise - input.absences_nb_jours;
+        var nb_jours_activite = nb_jours_mensualise;
         var salaire_h_normales = (nb_heures_normales + nb_heures_complementaires) * input.salaire_net_normal;
         var salaire_majore = input.salaire_horaire_majore || input.salaire_net_normal * (100 + input.majoration_heures_majorees) / 100;
         var salaire_h_majorees = nb_heures_majorees * salaire_majore;
@@ -53,21 +53,9 @@ var pajomatic_model = (function (undefined) {
 
 
     exports.calculateAnneeComplete = function (input) {
-//  input.nb_jours_par_semaine = 4;
-//  input.nb_heures_normales = 32;
-//  input.salaire_net_normal = 3.00;
-//  input.nb_supp_majorees = 0;
-//  input.majoration_heures_majorees = 17;
-
         var nb_jours_activite = input.nb_jours_par_semaine * 52 / 12;
         var nb_heures_normales = input.nb_heures_normales * 52 / 12;
         var nb_heures_majorees = input.nb_heures_majorees * 52 / 12 + input.nb_supp_majorees;
-
-//        if (input.absences_nb_heures_majorees || input.absences_nb_heures_normales) {
-//            nb_jours_activite -= input.absences_nb_jours;
-//            nb_heures_normales -= input.absences_nb_heures_normales;
-//            nb_heures_majorees -= input.absences_nb_heures_majorees;
-//        }
 
         var salaire_heures_normales = (nb_heures_normales + input.nb_supp_complementaires) * input.salaire_net_normal;
         var salaire_horaire_majore = input.salaire_horaire_majore || input.salaire_net_normal * (100 + input.majoration_heures_majorees) / 100 ;
@@ -100,7 +88,6 @@ var pajomatic_model = (function (undefined) {
         };
         return output;
     };
-
 
     return exports;
 })();
