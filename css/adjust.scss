@@ -20,10 +20,11 @@ footer {
 }
 
 .output-table.table-bordered {
+  border: 2px solid darken($pajePurple, 15%);
   tbody {
     td, th {
       background: $pajeYellow;
-      border: 3px solid #fff;
+      border-color: #fff;
     }
   }
 
@@ -33,4 +34,10 @@ footer {
       background: $pajePurple;
     }
   }
+}
+
+.total-a-payer {
+  background-color: $pajePurple;
+  border: 3px solid darken($pajePurple, 15%);
+  font-size: 1.6em;
 }
