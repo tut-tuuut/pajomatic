@@ -16,6 +16,7 @@ Ce site sert à aider les parents de jeunes enfants qui font garder leur bébé 
 ## Comment ça marche ?
 
 Tout d'abord, complétez le formulaire avec :
+
 - les données extraites du contrat (qui ne changent pas d'un mois sur l'autre),
 - et avec les données propres au mois courant ou qui ne sont pas mensualisées (les congés payés, les absences, les repas…).
 
