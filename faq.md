@@ -34,11 +34,11 @@ Cela dit, il n'est pas exclu qu'il subsiste des bugs ou des erreurs d'interprét
 
 ## J'ai trouvé un bug. Que faire ?
 
-Le projet étant open source (voir le lien vers les sources sur [Github](https://github.com/tut-tuuut/pajomatic)), voici ce que vous pouvez faire (par ordre de préférence décroissante) :
+Le projet étant open source (voir le lien vers les sources sur [Github]({{site.github_url}})), voici ce que vous pouvez faire (par ordre de préférence décroissante) :
 
 1. Corriger le bug et proposer une _pull request_ sur github.
 2. Créer un rapport de bug sur github.
-3. Laisser un message sur [le compte twitter](https://twitter.com/pajomatic) ou sur [la page facebook](https://www.facebook.com/pajomaticfr).
+3. Laisser un message sur [le compte twitter](https://twitter.com/{{site.twitter_username}}) ou sur [la page facebook]({{site.facebook_url}}).
 
 ## J'ai une suggestion d'amélioration ou de nouvelle fonctionnalité. Que faire ?
 
@@ -58,11 +58,11 @@ Ensuite, créez un rapport de bug sur Github, twitter ou facebook en décrivant 
 
 Hmmm… un jour… peut-être ?
 
-Pour savoir ce qui est en projet, regardez [la liste des bugs et tâches](https://github.com/tut-tuuut/pajomatic/issues) sur Github. Il s'agit des modifications que j'ai l'intention de faire quand j'en aurai le temps (… ou que vous pouvez faire si vous avez le temps ! <3).
+Pour savoir ce qui est en projet, regardez [la liste des bugs et tâches]({{site.github_url}}/issues) sur Github. Il s'agit des modifications que j'ai l'intention de faire quand j'en aurai le temps (… ou que vous pouvez faire si vous avez le temps ! <3).
 
 N'hésitez pas à demander, en tout cas. Vous n'êtes sûrement pas la seule personne intéressée.
 
 
 ## Comment contribuer au développement ?
 
-En lisant avec attention le [fichier Readme.md](https://github.com/tut-tuuut/pajomatic#readme) du code source ! :D
+En lisant avec attention le [fichier Readme.md]({{site.github_url}}#readme) du code source ! :D

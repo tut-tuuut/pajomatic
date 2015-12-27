@@ -8,7 +8,7 @@ baseurl: "/pajomatic/" # the subpath of your site, e.g. /blog/
 url: "http://tut-tuuut.github.io" # the base hostname & protocol for your site
 twitter_username: pajomatic
 facebook_url: https://www.facebook.com/pajomaticfr
-github_url:  https://github.com/tut-tuuut/pajomatic/
+github_url:  https://github.com/tut-tuuut/pajomatic
 
 # Build settings
 markdown: kramdown
