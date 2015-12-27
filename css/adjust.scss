@@ -1,0 +1,36 @@
+---
+---
+
+// Adjustments for when bootstrap.css isn't enough
+
+$pajePurple:#D6C6D6;
+$pajeYellow:#EFEFDE;
+
+.center {
+ text-align: center;
+}
+.right {
+ text-align: right;
+}
+
+footer {
+ padding: .5em 0;
+ margin-top: .5em;
+ border-top: 1px solid #ddd;
+}
+
+.output-table.table-bordered {
+  tbody {
+    td, th {
+      background: $pajeYellow;
+      border: 3px solid #fff;
+    }
+  }
+
+  .title {
+    th {
+      text-transform: uppercase;
+      background: $pajePurple;
+    }
+  }
+}
