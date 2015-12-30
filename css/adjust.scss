@@ -41,3 +41,7 @@ footer {
   border: 3px solid darken($pajePurple, 15%);
   font-size: 1.6em;
 }
+
+textarea {
+  resize: vertical;
+}
