@@ -13,11 +13,12 @@ var pajomatic_view = function () {
         $.each(form.serializeArray(), function (i, element) {
             var name = element.name;
             var value = element.value;
-            if (is_numeric.test(value)) {
+            if ($('[name='+name+']').hasClass('not-numeric')) {
+                clean_value = value;
+            } else if (is_numeric.test(value)) {
                 clean_value = parseFloat(is_numeric.exec(value)[0].replace(',','.'));
             } else {
                 clean_value = 0;
-                //$('[name='+name+']').val(clean_value);
             }
             finalData[name] = clean_value;
 
