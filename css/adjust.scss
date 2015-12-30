@@ -1,0 +1,47 @@
+---
+---
+
+// Adjustments for when bootstrap.css isn't enough
+
+$pajePurple:#D6C6D6;
+$pajeYellow:#EFEFDE;
+
+.center {
+ text-align: center;
+}
+.right {
+ text-align: right;
+}
+
+footer {
+ padding: .5em 0;
+ margin-top: .5em;
+ border-top: 1px solid #ddd;
+}
+
+.output-table.table-bordered {
+  border: 2px solid darken($pajePurple, 15%);
+  tbody {
+    td, th {
+      background: $pajeYellow;
+      border-color: #fff;
+    }
+  }
+
+  .title {
+    th {
+      text-transform: uppercase;
+      background: $pajePurple;
+    }
+  }
+}
+
+.total-a-payer {
+  background-color: $pajePurple;
+  border: 3px solid darken($pajePurple, 15%);
+  font-size: 1.6em;
+}
+
+textarea {
+  resize: vertical;
+}
