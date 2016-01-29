@@ -39,7 +39,7 @@ var pajomatic_model = (function (undefined) {
         var output = {
             nb_heures_normales : Math.round(nb_heures_normales),
             nb_jours_activite : nb_jours_activite,
-            nb_jours_conges_payes : Math.ceil(input.nb_jours_conges_payes),
+            nb_jours_conges_payes : input.nb_jours_conges_payes,
             salaire_horaire_net_normal : input.salaire_net_normal,
             nb_heures_majorees : Math.round(nb_heures_majorees),
             nb_heures_complementaires : Math.round(input.nb_supp_complementaires),

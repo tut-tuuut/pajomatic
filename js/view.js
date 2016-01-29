@@ -38,18 +38,20 @@ var pajomatic_view = function () {
             if (placeholder.hasClass('euros')) {
                 placeholder.html(exports.formatFrenchPrice(data[key]));
             } else if (placeholder.hasClass('number')) {
-                placeholder.text(parseInt(data[key]));
+                placeholder.html(exports.formatFrenchNumber(data[key]));
             } else {
                 placeholder.text(data[key]);
             }
         }
     };
 
-    exports.formatFrenchPrice = function(number) {
+    exports.formatFrenchNumber = function(number) {
         if (!number) { return '' }
         var str = number.toString();
-        str = str.replace('.', ',');
-        return str + '&nbsp;€';
+        return str.replace('.', ',');
+    };
+    exports.formatFrenchPrice = function(number) {
+        return exports.formatFrenchNumber(number) + '&nbsp;€';
     };
 
     return exports;
