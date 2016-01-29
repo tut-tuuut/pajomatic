@@ -23,6 +23,9 @@ var pajomatic_model = (function (undefined) {
         var salaire_h_majorees = nb_heures_majorees * salaire_majore;
         var salaire_hors_conges = (salaire_h_majorees + salaire_h_normales);
         var salaire_net_total = Math.round((salaire_hors_conges + input.montant_conges_payes)*100)/100;
+        var taux_horaire_moyen = (input.nb_heures_normales*input.salaire_net_normal + input.nb_heures_majorees*salaire_majore)/(input.nb_heures_majorees+input.nb_heures_normales);
+
+        nb_heures_normales +=  input.montant_conges_payes/taux_horaire_moyen;
 
         var nb_jours_reel_1 = input.nb_jours_accueil_reel;
         var nb_jours_reel_2 = input.nb_jours_accueil_reel_2;
