@@ -28,8 +28,16 @@
 <div class="form-group">
   <label for="majoration_heures_majorees">
     Majoration des heures majorées
+	{% include form/help.html content="Remplir ici le champ en pourcentage OU le champ en valeur. Même si vous ne prévoyez pas d’heures majorées au contrat, vous devez décider d’un taux de majoration avec votre assmat." %}
   </label>
-  {% include form/input-group.html id="majoration_heures_majorees" addon="%" required=true %}
+   <div class="row">
+    <div class="col-md-6">
+	  {% include form/input-group.html id="majoration_heures_majorees" addon="%" required=false %}
+	</div>
+    <div class="col-md-6">
+	  {% include form/input-group.html id="majoration_heures_majorees_valeur" addon="€" required=false %}
+	</div>
+  </div>
 </div>
 
 <div class="row">
