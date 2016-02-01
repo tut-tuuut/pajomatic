@@ -64,12 +64,23 @@ $(document).ready(function () {
             },
             nb_heures_normales : {
                 max : "Au-delà de 45 heures par semaine, le salaire est majoré. Par exemple, si votre assmat travaille 48 heures par semaine, saisissez 45 heures normales et 3 heures majorées."
-            },
-            majoration_heures_majorees : {
-                required : "Même si vous ne prévoyez pas d’heures majorées au contrat, vous devez décider d’un taux de majoration avec votre assmat."
             }
         }
     });
+	
+	var verifyHeuresMajorees = (function () {
+		var majoration_heures_majorees_pcent = $('#majoration_heures_majorees');
+		var majoration_heures_majorees_valeur = $('#majoration_heures_majorees_valeur');
+		return function () {
+			if (majoration_heures_majorees_pcent.val()=='' && majoration_heures_majorees_valeur.val()=='') {
+				majoration_heures_majorees_pcent.closest('.input-group').addClass('has-error').removeClass('has-success');
+				majoration_heures_majorees_valeur.closest('.input-group').addClass('has-error').removeClass('has-success');
+			} else if (majoration_heures_majorees_pcent.val()!='' || majoration_heures_majorees_valeur.val()!='') {
+				majoration_heures_majorees_pcent.closest('.input-group').addClass('has-success').removeClass('has-error');
+				majoration_heures_majorees_valeur.closest('.input-group').addClass('has-success').removeClass('has-error');
+			}
+		}
+	})();
 
     var calculateNbOfMeals = (function () {
         var nb_days_input = $('#nb_jours_accueil_reel');
@@ -96,6 +107,7 @@ $(document).ready(function () {
     input_form.on('change', '[name=one_meal_a_day], [name=nb_jours_accueil_reel]', calculateNbOfMeals)
     input_form.on('submit', function(event) {
         calculateNbOfMeals();
+		verifyHeuresMajorees();
         calculateAndDisplay();
         event.preventDefault();
     });
