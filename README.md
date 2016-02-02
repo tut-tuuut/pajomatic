@@ -41,6 +41,8 @@ Quelques instructions :
 * Lancez vos pull requests vers la branche `master`.
 * Créez des PR _unitaires_. Il vaut mieux beaucoup de petites PR qui résolvent des tout petits problèmes qu'une grosse PR fourre-tout.
 
+Vous pouvez jeter un œil aux tâches/issues portant le label `easy`, par exemple, pour commencer doucement.
+
 ### Oui mais si j'veux pas coder ?
 
 1. Donnez-moi une [étoile](https://github.com/tut-tuuut/pajomatic/stargazers) !

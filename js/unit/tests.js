@@ -4,8 +4,9 @@ function getBaseInput(type) {
       nb_jours_par_semaine : 0, 
       nb_heures_normales : 0, 
       nb_heures_majorees : 0, 
-      salaire_net_normal : 0, 
-      majoration_heures_majorees : 0, 
+      salaire_net_normal : 0,
+      majoration_heures_majorees : 0,
+      majoration_heures_majorees_valeur : 0,
       indemnite_entretien : 0,
       indemnite_entretien_2 : 0,
       indemnite_entretien_3 : 0,
@@ -355,6 +356,68 @@ QUnit.test("Cas réel avril 2015", function(assert) {
   assert.equal(
     subject.indemnites_entretien,
     73.50,
+    "Le montant de l'indemnité d'entretien est bien calculé."
+  );
+});
+
+QUnit.test("Cas réel janvier 2016", function(assert) {
+  var input = getBaseInput();
+  input.nb_semaines = 42;
+  input.nb_jours_par_semaine = 5;
+  input.nb_heures_normales = 40;
+  input.nb_heures_majorees = 0;
+  input.salaire_net_normal = 3.50;
+  input.nb_supp_majorees = 0;
+  input.nb_supp_complementaires = 3;
+  input.majoration_heures_majorees = 20;
+  input.nb_repas = 20;
+  input.indemnite_repas = 3.00;
+  input.indemnite_gouter = 2.00;
+  input.nb_gouters = 20;
+  input.nb_jours_accueil_reel = 20;
+  input.indemnite_entretien = 3.50;
+  input.nb_jours_conges_payes = 2.5;
+  input.montant_conges_payes = 65.55; 
+
+  var subject = pajomatic_model.calculateAnneeIncomplete(input);
+  assert.equal(
+    subject.nb_heures_normales,
+    159,
+    "Le nombre d’heures normales est bien calculé."
+  );
+  assert.equal(
+    subject.nb_heures_majorees,
+    0,
+    "Le nombre d’heures majorées est bien calculé."
+  );
+  assert.equal(
+    subject.nb_jours_activite,
+    18,
+    "Le nombre de jours d'activité est bien calculé."
+  );
+  assert.equal(
+    subject.nb_jours_conges_payes,
+    2.5,
+    "Le nombre de jours de congés est bien affiché."
+  );
+  assert.equal(
+    subject.total_a_payer,
+    736.05,
+    "Le montant total à payer est bien calculé."
+  );
+  assert.equal(
+    subject.salaire_net_total,
+    566.05,
+    "Le salaire net total est bien calculé."
+  );
+  assert.equal(
+    subject.indemnites_repas,
+    100,
+    "Le montant de l'indemnité de repas est correct."
+  );
+  assert.equal(
+    subject.indemnites_entretien,
+    70,
     "Le montant de l'indemnité d'entretien est bien calculé."
   );
 });
