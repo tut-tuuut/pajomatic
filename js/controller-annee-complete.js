@@ -53,20 +53,20 @@ $(document).ready(function () {
             }
         }
     });
-	
-	var verifyHeuresMajorees = (function () {
-		var majoration_heures_majorees_pcent = $('#majoration_heures_majorees');
-		var majoration_heures_majorees_valeur = $('#majoration_heures_majorees_valeur');
-		return function () {
-			if (majoration_heures_majorees_pcent.val()=='' && majoration_heures_majorees_valeur.val()=='') {
-				majoration_heures_majorees_pcent.closest('.input-group').addClass('has-error').removeClass('has-success');
-				majoration_heures_majorees_valeur.closest('.input-group').addClass('has-error').removeClass('has-success');
-			} else if (majoration_heures_majorees_pcent.val()!='' || majoration_heures_majorees_valeur.val()!='') {
-				majoration_heures_majorees_pcent.closest('.input-group').addClass('has-success').removeClass('has-error');
-				majoration_heures_majorees_valeur.closest('.input-group').addClass('has-success').removeClass('has-error');
-			}
-		}
-	})();
+    
+    var verifyHeuresMajorees = (function () {
+        var majoration_heures_majorees_pcent = $('#majoration_heures_majorees');
+        var majoration_heures_majorees_valeur = $('#majoration_heures_majorees_valeur');
+        return function () {
+            if (majoration_heures_majorees_pcent.val()=='' && majoration_heures_majorees_valeur.val()=='') {
+                majoration_heures_majorees_pcent.closest('.input-group').addClass('has-error').removeClass('has-success');
+                majoration_heures_majorees_valeur.closest('.input-group').addClass('has-error').removeClass('has-success');
+            } else if (majoration_heures_majorees_pcent.val()!='' || majoration_heures_majorees_valeur.val()!='') {
+                majoration_heures_majorees_pcent.closest('.input-group').addClass('has-success').removeClass('has-error');
+                majoration_heures_majorees_valeur.closest('.input-group').addClass('has-success').removeClass('has-error');
+            }
+        }
+    })();
 
     var calculateNbOfMeals = (function () {
         var nb_days_input = $('#nb_jours_accueil_reel');
@@ -95,7 +95,7 @@ $(document).ready(function () {
 
     input_form.on('submit', function(event) {
         calculateNbOfMeals();
-		verifyHeuresMajorees();
+        verifyHeuresMajorees();
         calculateAndDisplay();
         event.preventDefault();
     });

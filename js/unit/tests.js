@@ -6,7 +6,7 @@ function getBaseInput(type) {
       nb_heures_majorees : 0, 
       salaire_net_normal : 0,
       majoration_heures_majorees : 0,
-	  majoration_heures_majorees_valeur : 0,
+      majoration_heures_majorees_valeur : 0,
       indemnite_entretien : 0,
       indemnite_entretien_2 : 0,
       indemnite_entretien_3 : 0,
