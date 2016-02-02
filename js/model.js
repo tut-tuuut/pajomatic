@@ -19,10 +19,15 @@ var pajomatic_model = (function (undefined) {
 
         var nb_jours_activite = nb_jours_mensualise;
         var salaire_h_normales = (nb_heures_normales + nb_heures_complementaires) * input.salaire_net_normal;
-        if (input.salaire_horaire_majore) var salaire_majore = input.salaire_horaire_majore;
-        else if (input.majoration_heures_majorees!=0) var salaire_majore = input.salaire_net_normal * (100 + input.majoration_heures_majorees) / 100 ;
-        else if (input.majoration_heures_majorees_valeur!=0) var salaire_majore = input.majoration_heures_majorees_valeur;
-        else var salaire_majore=0;
+        if (input.salaire_horaire_majore) {
+            var salaire_majore = input.salaire_horaire_majore;
+        } else if (input.majoration_heures_majorees != 0) {
+            var salaire_majore = input.salaire_net_normal * (100 + input.majoration_heures_majorees) / 100;
+        } else if (input.majoration_heures_majorees_valeur != 0) {
+            var salaire_majore = input.majoration_heures_majorees_valeur;
+        } else {
+            var salaire_majore = 0;
+        }
         var salaire_h_majorees = nb_heures_majorees * salaire_majore;
         var salaire_hors_conges = (salaire_h_majorees + salaire_h_normales);
         var salaire_net_total = Math.round((salaire_hors_conges + input.montant_conges_payes)*100)/100;
