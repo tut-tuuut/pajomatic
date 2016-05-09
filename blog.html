@@ -1,0 +1,13 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
+{% for post in site.posts %}
+    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    Catégories
+    {% for cat in post.categories %}
+        <span>{{ cat }}</span>
+    {% endfor %}
+{% endfor %}
