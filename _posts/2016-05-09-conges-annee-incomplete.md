@@ -122,7 +122,7 @@ Si vous payez les congés en une fois, la déclaration se passe ainsi sur Pajemp
   <strong>Astuce :</strong> la calculatrice Pajomatic fait tous ces calculs à votre place. Vous n'avez qu'à remplir les cases « congés payés » dans la section « mois en cours » avec le nombre de jours et d'euros du mois courant.
 </p>
 
-<p class="alert alert-warning">Prenez toujours garde à déclarer le salaire des congés payés **et** le nombre de jours correspondant. De cette manière, vous ne dépasserez pas la fourchette des 5 SMIC quotidiens qui vous coupe le droit au CMG. En effet, Pajemploi divise le salaire total par [nombre de jours d'activité + nombre de jours de congés payés] pour évaluer le droit.
+<p class="alert alert-warning">Prenez toujours garde à déclarer le salaire des congés payés <strong>et</strong> le nombre de jours correspondant. De cette manière, vous ne dépasserez pas la fourchette des 5 SMIC horaires quotidiens qui vous coupe le droit au CMG. En effet, Pajemploi divise le salaire total par [nombre de jours d'activité + nombre de jours de congés payés] pour évaluer le droit.
 </p>    
 
 Si vous payez les congés par petits morceaux, sachez que vous pouvez déclarer des demi-jours de congés sur Pajemploi, mais pas des morceaux plus petits.
