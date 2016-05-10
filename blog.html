@@ -3,11 +3,19 @@ layout: default
 title: Blog
 permalink: /blog/
 ---
-
+<main>
 {% for post in site.posts %}
-    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    Catégories
-    {% for cat in post.categories %}
-        <span>{{ cat }}</span>
-    {% endfor %}
+    <article class="panel panel-default">
+        <header class="panel-heading">
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            <time>{{ post.date | date: "%d/%m/%Y" }}</time>
+        </header>
+    <ul>
+        {% for cat in post.categories %}
+            <li class="label label-default">{{ cat }}</li>
+        {% endfor %}
+    </ul>
+    </article>
+    
 {% endfor %}
+</main>
