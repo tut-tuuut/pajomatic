@@ -8,15 +8,15 @@
       {% include footer.html %}
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="{{ site.baseurl }}js/jquery-1.11.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/url2form.js"></script>
-    <script src="js/jquery.validate.js"></script>
-    <script src="js/model.js"></script>
-    <script src="js/view.js"></script>
+    <script src="{{ site.baseurl }}js/bootstrap.min.js"></script>
+    <script src="{{ site.baseurl }}js/url2form.js"></script>
+    <script src="{{ site.baseurl }}js/jquery.validate.js"></script>
+    <script src="{{ site.baseurl }}js/model.js"></script>
+    <script src="{{ site.baseurl }}js/view.js"></script>
     {% if page.controller %}
-    <script src="js/controller-{{ page.controller }}.js"></script>
+    <script src="{{ site.baseurl }}js/controller-{{ page.controller }}.js"></script>
     {% endif %}
   </body>
 </html>
