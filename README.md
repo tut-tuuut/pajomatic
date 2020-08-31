@@ -2,6 +2,8 @@
 
 Calculatrice d'aide aux parents qui paient une assistante maternelle.
 
+[https://tut-tuuut.github.io/pajomatic/](https://tut-tuuut.github.io/pajomatic/)
+
 ## Architecture technique
 
 * HTML généré par [jekyll](http://jekyllrb.com/).
