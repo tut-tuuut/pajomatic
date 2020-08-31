@@ -21,7 +21,7 @@ Le plus dur est de [faire marcher le serveur jekyll](http://jekyllrb.com/docs/in
 
 Ces instructions sont valables pour des systèmes Unix (Mac OS ou Linux). Il existe aussi une [documentation pour windows](http://jekyllrb.com/docs/windows/#installation) que je n'ai pas essayée.
 
-### Alternative avec docker
+### Alternative avec docker
 
 Si docker est installé sur votre poste :
 
