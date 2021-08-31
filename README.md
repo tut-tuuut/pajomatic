@@ -2,6 +2,8 @@
 
 Calculatrice d'aide aux parents qui paient une assistante maternelle.
 
+[https://tut-tuuut.github.io/pajomatic/](https://tut-tuuut.github.io/pajomatic/)
+
 ## Architecture technique
 
 * HTML généré par [jekyll](http://jekyllrb.com/).
@@ -21,7 +23,7 @@ Le plus dur est de [faire marcher le serveur jekyll](http://jekyllrb.com/docs/in
 
 Ces instructions sont valables pour des systèmes Unix (Mac OS ou Linux). Il existe aussi une [documentation pour windows](http://jekyllrb.com/docs/windows/#installation) que je n'ai pas essayée.
 
-### Alternative avec docker
+### Alternative avec docker
 
 Si docker est installé sur votre poste :
 
